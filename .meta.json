@@ -1,0 +1,30 @@
+{
+  "name": "The Sharpfellas Barber Studio",
+  "town": "DeKalb IL",
+  "type": "barbershop",
+  "address": "205 E Lincoln Hwy Ste A, DeKalb, IL 60115",
+  "phone": "8157645461",
+  "checklistComplete": 9,
+  "researchStartedAt": "2026-05-24T06:47:12.849075Z",
+  "stage1FinishedAt": "2026-05-24T06:47:12.849075Z",
+  "outreachEligible": false,
+  "aiAssets": {
+    "logo": {
+      "source": "text_wordmark",
+      "url": null,
+      "generated": false,
+      "note": "FB Graph not attempted (no FB page ID parseable); text wordmark fallback per CLAUDE.md rule"
+    },
+    "hero": {
+      "canvaUrl": "https://export-download.canva.com/yPF9Q/DAHKjpyPF9Q/-1/0/0001-673792331171841402.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAQYCGKMUH5AO7UJ26%2F20260523%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260523T091938Z&X-Amz-Expires=83345&X-Amz-Signature=9df9c539521b06b200cf13132b30e080fdb60112ae8390badbe142dc874f1f0d&X-Amz-SignedHeaders=host%3Bx-amz-expected-bucket-owner&response-expires=Sun%2C%2024%20May%202026%2008%3A28%3A43%20GMT",
+      "localFile": "hero.jpg",
+      "generated": true,
+      "note": "Canva poster generated; Stage 2 fetches via fetch-assets.ps1"
+    },
+    "gallery": {
+      "generated": false,
+      "source": "unsplash-with-css-grading",
+      "note": "Adobe Stock returned 0 results in two attempts (barbershop interior queries); falling back to Unsplash + CSS filters per documented secondary fallback"
+    }
+  }
+}

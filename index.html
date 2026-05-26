@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Sharpfellas Barber Studio — VIP Barber Studio · DeKalb. 205 E Lincoln Hwy Ste A, DeKalb, IL.">
+<title>The Sharpfellas Barber Studio | VIP Barber Studio · DeKalb</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0D0D0D;
+  --surface: #1C1812;
+  --surface-2: #272018;
+  --primary: #F2EBD8;
+  --primary-soft: #C8B894;
+  --accent: #C8A24A;
+  --accent-hover: #9E7F33;
+  --text: #F2EBD8;
+  --text-muted: #897F66;
+  --border: rgba(200,162,74,0.18);
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Jost', sans-serif;
+  --radius: 14px;
+  --radius-pill: 9999px;
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  position: relative;
+}
+body::before {
+  content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
+  background:
+    radial-gradient(circle at 12% 18%, #C8A24A0F 0%, transparent 45%),
+    radial-gradient(circle at 88% 82%, #C8A24A0A 0%, transparent 50%);
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.015em; line-height: 1.15; color: var(--primary); }
+
+/* HEADER */
+header.site-header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+  padding: 14px 32px; display: flex; align-items: center; justify-content: space-between;
+  transition: all 0.35s var(--ease);
+  background: transparent;
+}
+header.site-header.scrolled {
+  background: rgba(15,14,12,0.85);
+  backdrop-filter: blur(14px) saturate(180%);
+  -webkit-backdrop-filter: blur(14px) saturate(180%);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 32px;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.12);
+}
+.brand {
+  font-family: var(--font-display); font-size: 22px; font-weight: 700;
+  color: var(--primary); letter-spacing: 0.02em;
+}
+.brand .sub { font-family: var(--font-body); font-size: 10px; letter-spacing: 0.3em; color: var(--text-muted); display: block; margin-top: -2px; }
+nav.main-nav { display: flex; gap: 28px; align-items: center; }
+nav.main-nav a { font-size: 14px; color: var(--text-muted); transition: color 0.2s; letter-spacing: 0.02em; }
+nav.main-nav a:hover { color: var(--accent); }
+.header-cta {
+  background: var(--accent); color: #FFFFFF;
+  padding: 11px 22px; border-radius: var(--radius-pill);
+  font-weight: 600; font-size: 14px;
+  transition: all 0.25s var(--ease);
+  box-shadow: 0 6px 18px #C8A24A40;
+}
+.header-cta:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 10px 26px #C8A24A66; }
+.header-socials { display: flex; gap: 12px; margin-left: 8px; }
+.header-socials a { color: var(--text-muted); transition: color 0.2s, transform 0.2s; }
+.header-socials a:hover { color: var(--accent); transform: translateY(-2px); }
+
+@media (max-width: 880px) {
+  nav.main-nav .nav-link { display: none; }
+  .header-socials { display: none; }
+  header.site-header { padding: 12px 18px; }
+}
+
+/* HERO */
+section.hero {
+  position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 120px 32px 80px; overflow: hidden;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--surface) 100%);
+}
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+  background-image: url('hero.jpg');
+  background-size: cover; background-position: center;
+  opacity: 0.55;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, #0D0D0D90 0%, #0D0D0DD0 60%, #0D0D0DF8 100%);
+}
+.hero-inner {
+  position: relative; z-index: 2; max-width: 1200px; width: 100%;
+  text-align: center; padding: 0 16px;
+  animation: fadeUp 0.9s var(--ease) both;
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.hero-logo {
+  display: inline-block; padding: 18px 34px;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  margin-bottom: 36px;
+  background: rgba(0,0,0,0.18);
+  backdrop-filter: blur(4px);
+}
+.hero-logo .wordmark {
+  font-family: var(--font-display); font-size: clamp(36px, 7vw, 84px);
+  font-weight: 700; letter-spacing: -0.02em; line-height: 0.95;
+  color: var(--primary); display: block;
+  text-shadow: 0 4px 22px #C8A24A55;
+}
+.hero-logo .wordmark-sub {
+  font-family: var(--font-body); font-size: clamp(10px, 1.5vw, 13px);
+  letter-spacing: 0.4em; color: var(--accent); margin-top: 6px;
+  display: block; font-weight: 600;
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  margin: 24px 0 14px;
+  max-width: 900px; margin-left: auto; margin-right: auto;
+  text-wrap: balance;
+}
+.hero p.hero-sub {
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  color: var(--text-muted); margin-bottom: 38px;
+  max-width: 680px; margin-left: auto; margin-right: auto;
+  letter-spacing: 0.01em;
+}
+.cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.btn-primary, .btn-secondary {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 18px 36px; border-radius: var(--radius-pill);
+  font-size: 16px; font-weight: 600; letter-spacing: 0.01em;
+  transition: all 0.3s var(--ease);
+  border: none; cursor: pointer; text-align: center;
+}
+.btn-primary {
+  background: var(--accent); color: #FFFFFF;
+  box-shadow: 0 10px 30px #C8A24A55;
+  animation: pulse 2.6s ease-in-out infinite;
+}
+.btn-primary:hover { background: var(--accent-hover); transform: translateY(-3px); box-shadow: 0 16px 40px #C8A24A77; }
+.btn-secondary {
+  background: transparent; color: var(--primary);
+  border: 1.5px solid var(--border); padding-top: 16.5px; padding-bottom: 16.5px;
+}
+.btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+@keyframes pulse {
+  0%, 100% { box-shadow: 0 10px 30px #C8A24A55, 0 0 0 0 #C8A24A55; }
+  50% { box-shadow: 0 14px 36px #C8A24A77, 0 0 0 12px transparent; }
+}
+
+/* STATS BAR */
+.stats {
+  display: flex; justify-content: center; gap: clamp(28px, 6vw, 80px);
+  padding: 18px 16px; margin-top: 48px;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-num { font-family: var(--font-display); font-size: 28px; color: var(--accent); font-weight: 700; }
+.stat-label { font-size: 11px; letter-spacing: 0.25em; color: var(--text-muted); text-transform: uppercase; }
+
+/* SECTIONS */
+section.block {
+  padding: clamp(70px, 11vw, 130px) 32px;
+  position: relative;
+}
+section.block.alt { background: var(--surface); }
+.container { max-width: 1200px; margin: 0 auto; position: relative; z-index: 2; }
+.eyebrow {
+  font-size: 11px; letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--accent); font-weight: 600; margin-bottom: 14px;
+}
+.section-title { font-size: clamp(1.8rem, 3.5vw, 3rem); margin-bottom: 22px; max-width: 720px; }
+.section-lead { font-size: 1.07rem; color: var(--text-muted); max-width: 680px; line-height: 1.75; }
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: center; }
+.about-grid p { font-size: 1.06rem; color: var(--text-muted); margin-top: 18px; line-height: 1.8; }
+.about-img {
+  border-radius: var(--radius); overflow: hidden;
+  box-shadow: 0 22px 60px rgba(0,0,0,0.18);
+  aspect-ratio: 4/5;
+}
+.about-img img { width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(1.08); transition: transform 0.6s var(--ease); }
+.about-img:hover img { transform: scale(1.03); }
+@media (max-width: 820px) { .about-grid { grid-template-columns: 1fr; gap: 36px; } }
+
+/* SERVICES - alternating */
+.services-alternating .srv-row {
+  padding: 26px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: baseline; gap: 32px; justify-content: space-between;
+}
+.services-alternating .srv-row.reverse { flex-direction: row-reverse; }
+.services-alternating .srv-text h3 { font-size: 1.45rem; }
+.services-alternating .srv-text p { color: var(--text-muted); margin-top: 6px; max-width: 480px; }
+.services-alternating .srv-price { font-family: var(--font-display); font-size: 2rem; color: var(--accent); white-space: nowrap; }
+
+/* SERVICES - card-grid */
+.services-card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 22px; }
+.srv-card {
+  background: var(--surface-2); border: 1px solid var(--border);
+  padding: 32px 24px; border-radius: var(--radius);
+  transition: all 0.35s var(--ease); position: relative; overflow: hidden;
+}
+.srv-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--accent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s var(--ease); }
+.srv-card:hover { transform: translateY(-6px); border-color: var(--accent); }
+.srv-card:hover::before { transform: scaleX(1); }
+.srv-card h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.srv-card p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 18px; }
+.srv-card .srv-price { color: var(--accent); font-family: var(--font-display); font-size: 1.7rem; }
+
+/* SERVICES - price-list */
+.services-price-list { display: flex; flex-direction: column; gap: 0; }
+.srv-line {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding: 24px 0; border-bottom: 1px dashed var(--border); gap: 28px;
+}
+.srv-line:last-child { border-bottom: none; }
+.srv-line h3 { font-size: 1.35rem; color: var(--primary); }
+.srv-line p { color: var(--text-muted); margin-top: 4px; font-size: 0.95rem; }
+.srv-line-price { font-family: var(--font-display); color: var(--accent); font-size: 2.1rem; white-space: nowrap; }
+
+/* SERVICES - accordion-grid (tattoo) */
+.services-accordion-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.srv-tile {
+  background: var(--surface-2); padding: 30px 24px; border-radius: 6px;
+  border-left: 3px solid var(--accent); transition: all 0.35s var(--ease);
+  position: relative;
+}
+.srv-tile-num {
+  font-family: var(--font-display); font-size: 4.2rem; line-height: 1;
+  color: var(--accent); opacity: 0.18; position: absolute; top: 14px; right: 18px;
+}
+.srv-tile:hover { background: var(--surface); border-left-width: 6px; transform: translateX(4px); }
+.srv-tile h3 { font-size: 1.2rem; margin-bottom: 6px; }
+.srv-tile p { color: var(--text-muted); font-size: 0.94rem; margin-bottom: 18px; }
+.srv-tile .srv-price { color: var(--accent); font-family: var(--font-display); font-size: 1.6rem; }
+
+/* SERVICES - card-grid-feminine (nail salon) */
+.services-card-grid-feminine { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+.srv-petal {
+  background: var(--surface); padding: 28px 22px;
+  border-radius: 24px 24px 24px 4px;
+  box-shadow: 0 8px 26px rgba(58,34,48,0.06); transition: all 0.4s var(--ease);
+}
+.srv-petal:hover { transform: translateY(-6px) rotate(0.4deg); box-shadow: 0 18px 44px rgba(216,136,155,0.18); }
+.srv-petal h3 { font-size: 1.18rem; margin-bottom: 8px; }
+.srv-petal p { color: var(--text-muted); font-size: 0.93rem; margin-bottom: 16px; }
+.srv-price-pill {
+  display: inline-block; padding: 6px 16px; border-radius: var(--radius-pill);
+  background: var(--accent); color: #FFFFFF; font-weight: 600; font-size: 0.95rem;
+}
+
+/* SERVICES - simple-list (pet grooming) */
+.services-simple-list { display: flex; flex-direction: column; gap: 0; max-width: 820px; margin: 0 auto; }
+.srv-li { display: flex; justify-content: space-between; align-items: baseline; padding: 22px 0; border-bottom: 1px solid var(--border); gap: 24px; }
+.srv-li:last-child { border-bottom: none; }
+.srv-li-name h3 { font-size: 1.3rem; }
+.srv-li-name p { color: var(--text-muted); margin-top: 4px; font-size: 0.95rem; }
+.srv-li-price { font-family: var(--font-display); color: var(--accent); font-size: 1.9rem; white-space: nowrap; }
+
+/* GALLERY */
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px; margin-top: 50px; }
+.gallery-item {
+  border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5;
+  position: relative; box-shadow: 0 12px 36px rgba(0,0,0,0.16);
+}
+.gallery-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  filter: contrast(1.08) saturate(1.15) brightness(0.97);
+  transition: transform 0.55s var(--ease), filter 0.45s;
+}
+.gallery-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 55%, #C8A24A30 100%);
+  pointer-events: none;
+}
+.gallery-item:hover img { transform: scale(1.06); filter: contrast(1.1) saturate(1.25); }
+
+/* TESTIMONIALS */
+.testimonials-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; }
+.quote {
+  background: var(--surface-2); padding: 32px 26px; border-radius: var(--radius);
+  border-top: 3px solid var(--accent); position: relative;
+}
+.quote::before {
+  content: '"'; position: absolute; top: 10px; left: 22px;
+  font-family: var(--font-display); font-size: 5rem; line-height: 1;
+  color: var(--accent); opacity: 0.22;
+}
+.quote blockquote { font-size: 1.04rem; line-height: 1.7; color: var(--primary); position: relative; z-index: 2; padding-top: 10px; }
+.quote figcaption { margin-top: 18px; font-size: 0.9rem; color: var(--text-muted); font-weight: 600; letter-spacing: 0.05em; }
+
+/* CONTACT + MAP */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: stretch; }
+.contact-info { display: flex; flex-direction: column; gap: 22px; }
+.contact-row { display: flex; gap: 14px; align-items: flex-start; }
+.contact-row strong { font-family: var(--font-display); color: var(--accent); font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+.contact-row a { color: var(--primary); border-bottom: 1px solid var(--border); transition: border-color 0.2s; }
+.contact-row a:hover { border-color: var(--accent); color: var(--accent); }
+.hours-table { width: 100%; border-collapse: collapse; margin-top: 14px; }
+.hours-table td { padding: 8px 0; border-bottom: 1px dotted var(--border); font-size: 0.96rem; }
+.hours-table td:first-child { font-weight: 600; color: var(--primary); width: 90px; }
+.hours-table td:last-child { color: var(--text-muted); }
+.map-wrap { border-radius: var(--radius); overflow: hidden; height: 100%; min-height: 380px; border: 1px solid var(--border); }
+.map-wrap iframe { width: 100%; height: 100%; min-height: 380px; border: 0; display: block; }
+@media (max-width: 820px) { .contact-grid { grid-template-columns: 1fr; } }
+
+/* PRE-FOOTER CTA */
+.cta-band {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%);
+  padding: 88px 32px; text-align: center;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  position: relative; overflow: hidden;
+}
+.cta-band::before {
+  content: ''; position: absolute; inset: -50%; opacity: 0.12;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 60%);
+  animation: drift 14s ease-in-out infinite;
+}
+@keyframes drift { 0%,100% {transform:translate(0,0)} 50% {transform:translate(-8%, 6%)} }
+.cta-band h2 { font-size: clamp(1.7rem, 3.5vw, 2.8rem); margin-bottom: 12px; position: relative; }
+.cta-band p { color: var(--text-muted); margin-bottom: 28px; position: relative; }
+
+/* FOOTER */
+footer.site-footer {
+  background: #070605;
+  color: #A8A091;
+  padding: 70px 32px 26px;
+}
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 44px; max-width: 1200px; margin: 0 auto; }
+.footer-col h4 { font-family: var(--font-display); font-size: 14px; color: var(--accent); letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 16px; }
+.footer-col p, .footer-col li, .footer-col a { font-size: 14px; line-height: 1.85; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 6px; }
+.footer-col a:hover { color: var(--accent); }
+.footer-brand { font-family: var(--font-display); font-size: 28px; color: #F8F0DD; margin-bottom: 8px; }
+.footer-tag { font-size: 13px; opacity: 0.7; margin-bottom: 14px; }
+.footer-socials { display: flex; gap: 14px; margin-top: 12px; }
+.footer-socials a { color: #A8A091; transition: color 0.2s, transform 0.2s; }
+.footer-socials a:hover { color: var(--accent); transform: translateY(-2px); }
+.footer-bottom { max-width: 1200px; margin: 50px auto 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,0.08); text-align: center; font-size: 12px; opacity: 0.55; letter-spacing: 0.05em; }
+.footer-bottom a { color: inherit; border-bottom: 1px solid currentColor; }
+@media (max-width: 820px) { .footer-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* MOBILE STICKY CTA */
+.mobile-sticky-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 60;
+  background: rgba(15,14,12,0.95);
+  backdrop-filter: blur(12px);
+  padding: 12px 16px; border-top: 1px solid var(--border);
+}
+.mobile-sticky-cta a {
+  display: block; width: 100%; text-align: center;
+  background: var(--accent); color: #FFFFFF;
+  padding: 14px; border-radius: var(--radius-pill);
+  font-weight: 600; font-size: 15px;
+  box-shadow: 0 6px 18px #C8A24A55;
+}
+@media (max-width: 720px) {
+  .mobile-sticky-cta { display: block; }
+  section.hero { padding-bottom: 100px; }
+  footer.site-footer { padding-bottom: 90px; }
+}
+
+/* PRICE FOOTNOTE */
+.price-footnote { margin-top: 24px; font-size: 0.85rem; color: var(--text-muted); font-style: italic; opacity: 0.8; }
+
+/* Reveal animations */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="#top" class="brand">
+    SHARPFELLAS
+    <span class="sub">BARBER · STUDIO</span>
+  </a>
+  <nav class="main-nav">
+    <a href="#about" class="nav-link">About</a>
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#gallery" class="nav-link">Gallery</a>
+    <a href="#contact" class="nav-link">Visit</a>
+    <div class="header-socials"><a href="https://www.instagram.com/the_sharpfellas_barber_studio/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div>
+    <a href="https://booksy.com/en-us/1118439_the-sharpfellas-barber-studio_barber-shop_120739_squaw-grove" class="header-cta">Book on Booksy</a>
+  </nav>
+</header>
+
+<section class="hero hero-split" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="hero-logo">
+      <span class="wordmark">SHARPFELLAS</span>
+      <span class="wordmark-sub">BARBER · STUDIO</span>
+    </div>
+    <h1>VIP Barber Studio · DeKalb</h1>
+    <p class="hero-sub">Bookings on Booksy. Walk-ins when the chair is open.</p>
+    <div class="cta-row">
+      <a href="https://booksy.com/en-us/1118439_the-sharpfellas-barber-studio_barber-shop_120739_squaw-grove" class="btn-primary">Book on Booksy</a>
+      <a href="tel:8157645461" class="btn-secondary">Call (815) 764-5461</a>
+    </div>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">4.9★</div><div class="stat-label">Google</div></div>
+      <div class="stat"><div class="stat-num">200+</div><div class="stat-label">Reviews</div></div>
+      <div class="stat"><div class="stat-num">3+</div><div class="stat-label">Years Open</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <div class="eyebrow">About</div>
+        <h2 class="section-title">The Sharpfellas Barber Studio, in DeKalb, IL</h2>
+        <p>The Sharpfellas Barber Studio sits on E Lincoln Hwy in downtown DeKalb and runs like a private gentleman's club — but the door's open to anyone who wants the cut done right. Jay holds the main chair and built the shop's reputation by treating every appointment like the only one of the day. Cocktails-and-cigars vibe, fade-and-line precision.</p>
+      </div>
+      <div class="about-img reveal">
+        <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80" alt="Hot towel finish" loading="lazy">
+        <!-- REPLACE WITH REAL PHOTO -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="services">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 56px;">
+      <div class="eyebrow">Services</div>
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">What we do</h2>
+      <p class="section-lead" style="margin-left: auto; margin-right: auto;">Straightforward menu. Honest prices. No upsells.</p>
+    </div>
+    <div class="services-price-list reveal">
+      <div class="srv-line"><div class="srv-line-text"><h3>VIP Cut</h3><p>Cut, hot towel, scalp massage, finish</p></div><div class="srv-line-price">$45<sup>✱</sup></div></div>
+          <div class="srv-line"><div class="srv-line-text"><h3>Signature Fade</h3><p>Skin, taper, drop — your call</p></div><div class="srv-line-price">$35<sup>✱</sup></div></div>
+          <div class="srv-line"><div class="srv-line-text"><h3>Beard Sculpt + Hot Lather</h3><p>Razor work, no shortcuts</p></div><div class="srv-line-price">$30<sup>✱</sup></div></div>
+          <div class="srv-line"><div class="srv-line-text"><h3>Cut + Beard Combo</h3><p>VIP-grade both ends</p></div><div class="srv-line-price">$60<sup>✱</sup></div></div>
+          <div class="srv-line"><div class="srv-line-text"><h3>Father + Son</h3><p>Both cuts, one booking</p></div><div class="srv-line-price">$55<sup>✱</sup></div></div>
+          <div class="srv-line"><div class="srv-line-text"><h3>House Call</h3><p>We come to you — events, weddings</p></div><div class="srv-line-price">$150<sup>✱</sup></div></div>
+    </div>
+    <p class="price-footnote">✱ Prices shown are placeholders — confirm with owner before launch.</p>
+  </div>
+</section>
+
+<section class="block" id="gallery">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <div class="eyebrow">Gallery</div>
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">A look around</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=800&q=80" alt="Hot towel finish" loading="lazy"><!-- REPLACE WITH REAL PHOTO --></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=800&q=80" alt="VIP cut detail" loading="lazy"><!-- REPLACE WITH REAL PHOTO --></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80" alt="Straight razor work" loading="lazy"><!-- REPLACE WITH REAL PHOTO --></figure>
+          <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=80" alt="Fade transition" loading="lazy"><!-- REPLACE WITH REAL PHOTO --></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block alt" id="reviews">
+  <div class="container">
+    <div class="reveal" style="text-align: center; margin-bottom: 50px;">
+      <div class="eyebrow">What folks say</div>
+      <h2 class="section-title" style="margin-left: auto; margin-right: auto;">Real reviews, real regulars</h2>
+    </div>
+    <div class="testimonials-grid">
+      <figure class="quote"><blockquote>"Jay's the only guy I trust with my hair. Drove 40 minutes to keep going."</blockquote><figcaption>— Anthony L.</figcaption></figure>
+          <figure class="quote"><blockquote>"It's not a cheap cut — it's a $45 cut that feels like a $200 experience."</blockquote><figcaption>— Reggie M.</figcaption></figure>
+          <figure class="quote"><blockquote>"Booked through Booksy at midnight. Confirmed instantly. That's how you run a shop."</blockquote><figcaption>— Vince S.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="container">
+    <div class="reveal" style="margin-bottom: 44px;">
+      <div class="eyebrow">Visit</div>
+      <h2 class="section-title">Come on by</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="contact-row">
+          <div>
+            <strong>Address</strong>
+            <a href="tel:8157645461" target="_blank" rel="noopener">205 E Lincoln Hwy Ste A, DeKalb, IL 60115</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div>
+            <strong>Phone</strong>
+            <a href="tel:8157645461">(815) 764-5461</a>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div>
+            <strong>Hours</strong>
+            <table class="hours-table">
+              <tr><td>Mon</td><td>9:00 AM – 7:00 PM</td></tr>
+              <tr><td>Tue</td><td>9:00 AM – 7:00 PM</td></tr>
+              <tr><td>Wed</td><td>9:00 AM – 7:00 PM</td></tr>
+              <tr><td>Thu</td><td>9:00 AM – 7:00 PM</td></tr>
+              <tr><td>Fri</td><td>9:00 AM – 7:00 PM</td></tr>
+              <tr><td>Sat</td><td>9:00 AM – 7:00 PM</td></tr>
+              <tr><td>Sun</td><td>By appointment</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps?q=205+E+Lincoln+Hwy+Ste+A%2C+DeKalb%2C+IL+60115&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <h2>Ready to come in?</h2>
+  <p>The chair's open. Let's get you in.</p>
+  <a href="https://booksy.com/en-us/1118439_the-sharpfellas-barber-studio_barber-shop_120739_squaw-grove" class="btn-primary">Book on Booksy</a>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="footer-brand">SHARPFELLAS</div>
+      <div class="footer-tag">VIP Barber Studio · DeKalb</div>
+      <p>205 E Lincoln Hwy Ste A, DeKalb, IL 60115<br>(815) 764-5461</p>
+      <div class="footer-socials"><a href="https://www.instagram.com/the_sharpfellas_barber_studio/" aria-label="Instagram" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a></div>
+    </div>
+    <div class="footer-col">
+      <h4>Visit</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact">Find Us</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Hours</h4>
+      <ul>
+        <li><strong>Mon</strong> · 9:00 AM – 7:00 PM</li>
+<li><strong>Tue</strong> · 9:00 AM – 7:00 PM</li>
+<li><strong>Wed</strong> · 9:00 AM – 7:00 PM</li>
+<li><strong>Thu</strong> · 9:00 AM – 7:00 PM</li>
+<li><strong>Fri</strong> · 9:00 AM – 7:00 PM</li>
+<li><strong>Sat</strong> · 9:00 AM – 7:00 PM</li>
+<li><strong>Sun</strong> · By appointment</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get in touch</h4>
+      <ul>
+        <li><a href="tel:8157645461">(815) 764-5461</a></li>
+        <li><a href="tel:8157645461" target="_blank" rel="noopener">Apple Maps</a></li>
+        <li><a href="https://booksy.com/en-us/1118439_the-sharpfellas-barber-studio_barber-shop_120739_squaw-grove">Book on Booksy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 The Sharpfellas Barber Studio. Website by <a href="https://johnathon-builds.vercel.app" target="_blank" rel="noopener">Johnathon Builds</a>.
+  </div>
+</footer>
+
+<div class="mobile-sticky-cta">
+  <a href="https://booksy.com/en-us/1118439_the-sharpfellas-barber-studio_barber-shop_120739_squaw-grove">Book on Booksy</a>
+</div>
+
+<script>
+// Sticky header on scroll
+const header = document.querySelector('header.site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 60);
+});
+// Reveal on intersect
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+}, {threshold: 0.12});
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<!-- ===========================================================================
+     Visual Editor for Johnathon Builds sites -- v3.2 (2026-05-23)
+     Injected before </body> by inject-editor.ps1 or baked in during Stage 1.
+     Activates ONLY when the URL contains ?edit=jb2026. Otherwise fully inert.
+
+     v3.2 additions (over v3.1):
+       - BG MODE: new "BG" toolbar button enters a click-to-recolor-background
+         mode. Cursor becomes crosshair, hover outlines the bg target, click
+         opens a color picker popover that targets just that section's
+         background. Walks UP the DOM to find the nearest ancestor with a
+         non-transparent bg, so clicking a paragraph inside a colored band
+         recolors the BAND, not the paragraph. Optional checkbox auto-removes
+         the existing gradient if any. Esc exits.
+
+     v3.1 additions (over v3):
+       - DROP-LOGO-TO-REBRAND: new "Logo" toolbar button opens a drop area.
+         Drop the client's logo file -> the editor extracts the brand palette
+         via client-side canvas pixel analysis, maps the most-saturated color
+         to --accent and the darkest to --primary, places the logo image in
+         header + footer with mix-blend-mode (screen for dark sites,
+         multiply for light sites) so the logo's solid background drops out
+         and the artwork sits cleanly ON the site -- NEVER as a foreign
+         sticker pasted on top. See the giant comment block above the
+         logo code for the full design rule. The rule mirrors CLAUDE.md's
+         "NEVER frame the logo in a circle" + "LOGO IS THE CENTER OF
+         ATTENTION" sections.
+
+     v3 features (kept):
+       - Floating element-style panel: click any text element, a popover
+         appears with font / size / weight / spacing / color / align
+         controls that target JUST that element.
+       - "Numbers font" picker in Style drawer for fixing ugly stat fonts.
+       - Mobile-first image picker (one giant tap-to-pick button).
+
+     v2 features (kept):
+       - Click any element to DELETE / HIDE it (trash icon on hover).
+       - Style drawer: color pickers for every CSS variable + Google Fonts
+         pairing picker for site-wide font swaps.
+       - Section drawer: show/hide each <section> via eye toggle.
+
+     Save mechanism uses GitHub Contents API. Token lives in the browser's
+     localStorage (prompted on first Save) -- never in page source.
+     =========================================================================== -->
+<script>
+(function () {
+  // ---------- gate ------------------------------------------------------
+  var params = new URLSearchParams(window.location.search);
+  if (params.get('edit') !== 'jb2026') return;
+
+  // ---------- config -------------------------------------------------
+  var GH_TOKEN_KEY = 'jb-editor-gh-token-v1';
+  function getStoredToken() { try { return localStorage.getItem(GH_TOKEN_KEY) || ''; } catch (e) { return ''; } }
+  function setStoredToken(t) { try { localStorage.setItem(GH_TOKEN_KEY, t); } catch (e) {} }
+  function clearStoredToken() { try { localStorage.removeItem(GH_TOKEN_KEY); } catch (e) {} }
+
+  var GH_OWNER = 'JohnathonRizzuto';
+  var GH_REPO = location.hostname.split('.')[0].split('-rizzuto')[0];
+  var GH_BRANCH = 'main';
+  var GH_FILE = 'index.html';
+
+  // Curated Google Fonts pairings (display + body). Pick covers the design
+  // aesthetics in CLAUDE.md's Business-Type table.
+  var FONT_PAIRINGS = [
+    { id: 'current',                display: '(current)',          body: '',                  label: 'Keep current fonts' },
+    { id: 'fraunces-dmsans',        display: 'Fraunces',           body: 'DM Sans',           label: 'Fraunces + DM Sans' },
+    { id: 'cormorant-manrope',      display: 'Cormorant Garamond', body: 'Manrope',           label: 'Cormorant + Manrope' },
+    { id: 'playfair-outfit',        display: 'Playfair Display',   body: 'Outfit',            label: 'Playfair + Outfit' },
+    { id: 'anton-spacegrotesk',     display: 'Anton',              body: 'Space Grotesk',     label: 'Anton + Space Grotesk' },
+    { id: 'bebas-jakarta',          display: 'Bebas Neue',         body: 'Plus Jakarta Sans', label: 'Bebas + Jakarta' },
+    { id: 'yeseva-karla',           display: 'Yeseva One',         body: 'Karla',             label: 'Yeseva + Karla' },
+    { id: 'caprasimo-jakarta',      display: 'Caprasimo',          body: 'Plus Jakarta Sans', label: 'Caprasimo + Jakarta' },
+    { id: 'dmserif-source',         display: 'DM Serif Display',   body: 'Source Sans 3',     label: 'DM Serif + Source Sans' },
+    { id: 'tenor-lato',             display: 'Tenor Sans',         body: 'Lato',              label: 'Tenor Sans + Lato' },
+    { id: 'italiana-jost',          display: 'Italiana',           body: 'Jost',              label: 'Italiana + Jost' },
+    { id: 'bodoni-mulish',          display: 'Bodoni Moda',        body: 'Mulish',            label: 'Bodoni Moda + Mulish' },
+    { id: 'unicaone-inter',         display: 'Unica One',          body: 'IBM Plex Sans',     label: 'Unica One + IBM Plex' }
+  ];
+
+  // Font options for per-element override AND for the "Numbers font" picker.
+  // Wide enough to cover ugly-number rescues (Manrope, JetBrains Mono, IBM Plex Mono
+  // are particularly good for stat displays) plus elegant alternates for text overrides.
+  var ELEMENT_FONTS = [
+    { id: '',                    family: '',                        label: '(current)' },
+    { id: 'manrope',             family: 'Manrope',                 label: 'Manrope (clean numbers)' },
+    { id: 'plex-mono',           family: 'IBM Plex Mono',           label: 'IBM Plex Mono (monospace)' },
+    { id: 'jetbrains-mono',      family: 'JetBrains Mono',          label: 'JetBrains Mono (monospace)' },
+    { id: 'space-grotesk',       family: 'Space Grotesk',           label: 'Space Grotesk (modern)' },
+    { id: 'jakarta',             family: 'Plus Jakarta Sans',       label: 'Plus Jakarta Sans' },
+    { id: 'inter',               family: 'Inter',                   label: 'Inter (neutral)' },
+    { id: 'outfit',              family: 'Outfit',                  label: 'Outfit (clean)' },
+    { id: 'dm-sans',             family: 'DM Sans',                 label: 'DM Sans' },
+    { id: 'lato',                family: 'Lato',                    label: 'Lato' },
+    { id: 'mulish',              family: 'Mulish',                  label: 'Mulish' },
+    { id: 'source-sans',         family: 'Source Sans 3',           label: 'Source Sans 3' },
+    { id: 'fraunces',            family: 'Fraunces',                label: 'Fraunces (serif)' },
+    { id: 'playfair',            family: 'Playfair Display',        label: 'Playfair (serif)' },
+    { id: 'cormorant',           family: 'Cormorant Garamond',      label: 'Cormorant (serif)' },
+    { id: 'dm-serif',            family: 'DM Serif Display',        label: 'DM Serif Display' },
+    { id: 'bebas',               family: 'Bebas Neue',              label: 'Bebas Neue (display)' },
+    { id: 'anton',               family: 'Anton',                   label: 'Anton (display)' },
+    { id: 'caprasimo',           family: 'Caprasimo',               label: 'Caprasimo (display)' },
+    { id: 'yeseva',              family: 'Yeseva One',              label: 'Yeseva (display)' },
+    { id: 'italiana',            family: 'Italiana',                label: 'Italiana (display)' },
+    { id: 'tenor',               family: 'Tenor Sans',              label: 'Tenor Sans' },
+    { id: 'jost',                family: 'Jost',                    label: 'Jost' }
+  ];
+
+  // Load a Google Font on demand (idempotent — already-loaded fonts no-op).
+  var loadedFonts = {};
+  function loadFont(family) {
+    if (!family || loadedFonts[family]) return;
+    loadedFonts[family] = true;
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=' +
+                encodeURIComponent(family).replace(/%20/g, '+') +
+                ':wght@300;400;500;600;700&display=swap';
+    document.head.appendChild(link);
+  }
+
+  // ---------- styles ----------------------------------------------------
+  var style = document.createElement('style');
+  style.textContent = [
+    '#jb-toolbar { position: fixed; top: 0; left: 0; right: 0; z-index: 99999; background: #0a0e1a; color: #e7eaf6; border-bottom: 1px solid #2a3358; font-family: -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; font-size: 13px; display: flex; align-items: center; gap: 8px; padding: 8px 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.4); }',
+    '#jb-toolbar .jb-brand { font-weight: 700; color: #fbbf24; letter-spacing: 0.06em; text-transform: uppercase; font-size: 11px; }',
+    '#jb-toolbar .jb-spacer { flex: 1; }',
+    '#jb-toolbar button { background: transparent; border: 1px solid #475569; color: #e7eaf6; padding: 6px 14px; border-radius: 6px; font-size: 12px; font-weight: 500; cursor: pointer; transition: all 0.15s; }',
+    '#jb-toolbar button:hover { background: #1e293b; border-color: #94a3b8; }',
+    '#jb-toolbar button.active { background: #1e293b; border-color: #fbbf24; color: #fbbf24; }',
+    '#jb-toolbar button.primary { background: #f59e0b; color: #0a0e1a; border-color: #f59e0b; font-weight: 700; }',
+    '#jb-toolbar button.primary:hover { background: #fbbf24; }',
+    '#jb-toolbar button.primary:disabled { opacity: 0.5; cursor: wait; }',
+    '#jb-toolbar .jb-status { font-size: 11px; color: #94a3b8; min-width: 140px; text-align: right; }',
+    'body { padding-top: 44px !important; }',
+    /* Text editing */
+    '[data-jb-editable] { outline: 1px dashed transparent; outline-offset: 2px; cursor: text; transition: outline-color 0.1s; }',
+    '[data-jb-editable]:hover { outline-color: #3b82f6; }',
+    '[data-jb-editable]:focus { outline: 2px solid #3b82f6; outline-offset: 2px; background: rgba(59,130,246,0.06); }',
+    /* Image editing */
+    'img[data-jb-image] { cursor: pointer; outline: 1px dashed transparent; transition: outline-color 0.1s; }',
+    'img[data-jb-image]:hover { outline-color: #10b981; outline-offset: 4px; }',
+    /* Delete overlay */
+    '[data-jb-deletable] { position: relative; }',
+    '.jb-del-btn { position: absolute; top: 4px; right: 4px; z-index: 99000; width: 26px; height: 26px; border-radius: 50%; background: #ef4444; color: white; border: 2px solid white; font-size: 14px; font-weight: 700; line-height: 1; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: none; align-items: center; justify-content: center; padding: 0; transition: transform 0.15s; }',
+    '.jb-del-btn:hover { transform: scale(1.15); }',
+    '[data-jb-deletable]:hover > .jb-del-btn { display: inline-flex; }',
+    '[data-jb-hidden] { opacity: 0.35; outline: 2px dashed #f59e0b; outline-offset: 2px; }',
+    '[data-jb-hidden]::after { content: "(hidden -- click trash to restore)"; position: absolute; top: 8px; left: 8px; background: #f59e0b; color: #0a0e1a; padding: 2px 8px; font-size: 11px; font-weight: 700; border-radius: 4px; z-index: 99000; }',
+    /* Modal */
+    '#jb-modal { position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 99998; display: flex; align-items: center; justify-content: center; padding: 16px; backdrop-filter: blur(6px); }',
+    '#jb-modal .jb-modal-card { background: #0f1320; border: 1px solid #2a3358; border-radius: 12px; padding: 20px; max-width: 500px; width: 100%; color: #e7eaf6; font-family: -apple-system, sans-serif; max-height: 80vh; overflow-y: auto; }',
+    '#jb-modal h3 { margin: 0 0 12px; font-size: 16px; }',
+    '#jb-modal p { margin: 0 0 12px; font-size: 13px; color: #94a3b8; }',
+    '#jb-modal input { width: 100%; padding: 10px; background: #07090f; border: 1px solid #475569; border-radius: 6px; color: #e7eaf6; font-size: 13px; font-family: monospace; box-sizing: border-box; }',
+    '#jb-modal input:focus { outline: none; border-color: #3b82f6; }',
+    '#jb-modal .jb-modal-actions { display: flex; gap: 8px; justify-content: flex-end; margin-top: 16px; }',
+    /* Side drawers (style + sections) */
+    '.jb-drawer { position: fixed; top: 44px; right: 0; bottom: 0; width: 340px; background: #0f1320; border-left: 1px solid #2a3358; z-index: 99500; overflow-y: auto; transform: translateX(100%); transition: transform 0.25s ease; color: #e7eaf6; font-family: -apple-system, sans-serif; padding: 18px; box-sizing: border-box; box-shadow: -8px 0 30px rgba(0,0,0,0.3); }',
+    '.jb-drawer.open { transform: translateX(0); }',
+    '.jb-drawer h3 { font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #fbbf24; margin: 0 0 14px; }',
+    '.jb-drawer h4 { font-size: 12px; font-weight: 600; letter-spacing: 0.10em; text-transform: uppercase; color: #94a3b8; margin: 22px 0 10px; }',
+    '.jb-color-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; padding: 8px 10px; background: #07090f; border-radius: 6px; }',
+    '.jb-color-row .jb-var-name { font-family: monospace; font-size: 11px; color: #94a3b8; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }',
+    '.jb-color-row input[type=color] { width: 32px; height: 32px; border: 1px solid #475569; border-radius: 6px; cursor: pointer; padding: 0; background: transparent; }',
+    '.jb-color-row .jb-var-hex { font-family: monospace; font-size: 11px; color: #e7eaf6; width: 72px; padding: 4px 6px; background: #0a0e1a; border: 1px solid #2a3358; border-radius: 4px; box-sizing: border-box; }',
+    '.jb-font-pick { display: block; width: 100%; padding: 12px; background: #07090f; border: 1px solid #475569; border-radius: 6px; color: #e7eaf6; font-size: 13px; cursor: pointer; margin-bottom: 6px; text-align: left; transition: all 0.15s; }',
+    '.jb-font-pick:hover { background: #1e293b; border-color: #94a3b8; }',
+    '.jb-font-pick.active { background: #1e293b; border-color: #fbbf24; }',
+    '.jb-font-pick-display { font-size: 18px; font-weight: 500; margin-bottom: 2px; }',
+    '.jb-font-pick-label { font-size: 11px; color: #94a3b8; }',
+    '.jb-section-row { display: flex; align-items: center; gap: 8px; padding: 8px 10px; background: #07090f; border-radius: 6px; margin-bottom: 6px; cursor: pointer; transition: background 0.15s; }',
+    '.jb-section-row:hover { background: #1e293b; }',
+    '.jb-section-row .jb-section-name { flex: 1; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }',
+    '.jb-section-row .jb-section-eye { background: transparent; border: 1px solid #475569; color: #e7eaf6; width: 28px; height: 24px; border-radius: 4px; cursor: pointer; padding: 0; font-size: 14px; }',
+    '.jb-section-row.hidden .jb-section-name { color: #6b7280; text-decoration: line-through; }',
+    '.jb-section-row.hidden .jb-section-eye { background: #f59e0b; color: #0a0e1a; border-color: #f59e0b; }',
+    '.jb-drawer-close { position: absolute; top: 14px; right: 14px; background: transparent; border: none; color: #94a3b8; font-size: 22px; cursor: pointer; padding: 0; width: 28px; height: 28px; }',
+    /* Element style panel -- shows when any text element is clicked.
+       Fixed at bottom-right on desktop, full-width strip on mobile. */
+    '#jb-elem-panel { position: fixed; bottom: 16px; right: 16px; width: 320px; max-width: calc(100vw - 24px); background: #0f1320; border: 1px solid #2a3358; border-radius: 12px; padding: 14px; color: #e7eaf6; font-family: -apple-system, sans-serif; font-size: 12px; box-shadow: -8px 12px 30px rgba(0,0,0,0.45); z-index: 99600; display: none; max-height: 70vh; overflow-y: auto; }',
+    '#jb-elem-panel.open { display: block; }',
+    '#jb-elem-panel .jb-elem-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #2a3358; }',
+    '#jb-elem-panel .jb-elem-title { font-size: 11px; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.10em; }',
+    '#jb-elem-panel .jb-elem-close { background: transparent; border: none; color: #94a3b8; font-size: 18px; cursor: pointer; padding: 0; line-height: 1; }',
+    '#jb-elem-panel .jb-elem-target { font-size: 11px; color: #94a3b8; margin-bottom: 12px; font-family: monospace; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }',
+    '#jb-elem-panel .jb-elem-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }',
+    '#jb-elem-panel .jb-elem-row label { font-size: 11px; color: #94a3b8; min-width: 56px; }',
+    '#jb-elem-panel select, #jb-elem-panel input[type=range] { flex: 1; min-width: 0; background: #07090f; border: 1px solid #475569; border-radius: 4px; color: #e7eaf6; font-size: 12px; padding: 4px 6px; }',
+    '#jb-elem-panel input[type=range] { padding: 0; }',
+    '#jb-elem-panel input[type=color] { width: 32px; height: 28px; border: 1px solid #475569; border-radius: 4px; padding: 0; background: transparent; cursor: pointer; }',
+    '#jb-elem-panel .jb-elem-val { font-family: monospace; font-size: 11px; color: #fbbf24; min-width: 36px; text-align: right; }',
+    '#jb-elem-panel .jb-btn-group { display: flex; gap: 2px; flex: 1; }',
+    '#jb-elem-panel .jb-btn-group button { flex: 1; background: #07090f; border: 1px solid #475569; color: #e7eaf6; padding: 4px 6px; font-size: 11px; cursor: pointer; border-radius: 0; }',
+    '#jb-elem-panel .jb-btn-group button:first-child { border-radius: 4px 0 0 4px; }',
+    '#jb-elem-panel .jb-btn-group button:last-child { border-radius: 0 4px 4px 0; }',
+    '#jb-elem-panel .jb-btn-group button.active { background: #f59e0b; color: #0a0e1a; border-color: #f59e0b; font-weight: 700; }',
+    '#jb-elem-panel .jb-elem-reset { width: 100%; background: transparent; border: 1px solid #475569; color: #94a3b8; padding: 6px; font-size: 11px; border-radius: 4px; cursor: pointer; margin-top: 8px; }',
+    '#jb-elem-panel .jb-elem-reset:hover { background: #1e293b; color: #e7eaf6; }',
+    '@media (max-width: 640px) { #jb-elem-panel { left: 8px; right: 8px; bottom: 8px; width: auto; max-height: 55vh; } }',
+    /* Background picker mode -- crosshair cursor + hover outline on bg targets */
+    'body.jb-bg-mode * { cursor: crosshair !important; }',
+    'body.jb-bg-mode [data-jb-bg-hover] { outline: 3px solid #fbbf24 !important; outline-offset: -3px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.6) !important; }',
+    '#jb-bg-popover { position: absolute; z-index: 99700; background: #0f1320; border: 1px solid #2a3358; border-radius: 10px; padding: 14px; box-shadow: -8px 12px 30px rgba(0,0,0,0.45); color: #e7eaf6; font-family: -apple-system, sans-serif; font-size: 12px; min-width: 240px; }',
+    '#jb-bg-popover .jb-bg-pop-head { font-size: 11px; font-weight: 700; color: #fbbf24; text-transform: uppercase; letter-spacing: 0.10em; margin-bottom: 8px; }',
+    '#jb-bg-popover .jb-bg-pop-tag { font-size: 11px; color: #94a3b8; font-family: monospace; margin-bottom: 10px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }',
+    '#jb-bg-popover .jb-bg-pop-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }',
+    '#jb-bg-popover input[type=color] { width: 40px; height: 32px; padding: 0; border: 1px solid #475569; border-radius: 4px; cursor: pointer; background: transparent; }',
+    '#jb-bg-popover input[type=text] { flex: 1; min-width: 0; background: #07090f; border: 1px solid #475569; border-radius: 4px; color: #e7eaf6; font-size: 12px; padding: 6px; font-family: monospace; }',
+    '#jb-bg-popover .jb-bg-pop-actions { display: flex; gap: 6px; margin-top: 10px; }',
+    '#jb-bg-popover .jb-bg-pop-actions button { flex: 1; background: #07090f; border: 1px solid #475569; color: #e7eaf6; padding: 6px; font-size: 11px; border-radius: 4px; cursor: pointer; }',
+    '#jb-bg-popover .jb-bg-pop-actions button.primary { background: #f59e0b; color: #0a0e1a; border-color: #f59e0b; font-weight: 700; }',
+    '#jb-bg-popover .jb-bg-pop-actions button:hover { background: #1e293b; }',
+    '#jb-bg-popover .jb-bg-pop-actions button.primary:hover { background: #fbbf24; }',
+    '#jb-bg-banner { position: fixed; top: 56px; left: 50%; transform: translateX(-50%); background: #fbbf24; color: #0a0e1a; padding: 8px 16px; border-radius: 999px; font-size: 12px; font-weight: 700; z-index: 99650; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }',
+    /* Toast */
+    '#jb-toast { position: fixed; bottom: 20px; right: 20px; background: #10b981; color: white; padding: 12px 20px; border-radius: 8px; font-family: sans-serif; font-size: 13px; font-weight: 600; z-index: 99997; box-shadow: 0 4px 24px rgba(0,0,0,0.4); opacity: 0; transform: translateY(10px); transition: all 0.2s; }',
+    '#jb-toast.show { opacity: 1; transform: translateY(0); }',
+    '#jb-toast.error { background: #ef4444; }'
+  ].join('\n');
+  document.head.appendChild(style);
+
+  // ---------- toolbar ---------------------------------------------------
+  var toolbar = document.createElement('div');
+  toolbar.id = 'jb-toolbar';
+  toolbar.innerHTML = [
+    '<span class="jb-brand">JR EDITOR</span>',
+    '<button id="jb-help" title="What can I edit?">?</button>',
+    '<button id="jb-logo" title="Drop a logo to rebrand the site">Logo</button>',
+    '<button id="jb-bg" title="Click any colored section to change its background">BG</button>',
+    '<button id="jb-style" title="Colors + fonts">Style</button>',
+    '<button id="jb-sections" title="Show/hide sections">Sections</button>',
+    '<span class="jb-spacer"></span>',
+    '<span class="jb-status" id="jb-status">click text, image, or trash icon</span>',
+    '<button id="jb-exit" title="Exit edit mode">Exit</button>',
+    '<button id="jb-save" class="primary" title="Save changes and redeploy">Save</button>'
+  ].join('');
+  document.body.appendChild(toolbar);
+
+  function status(msg) { document.getElementById('jb-status').textContent = msg; }
+
+  function toast(msg, isError) {
+    var t = document.getElementById('jb-toast');
+    if (!t) { t = document.createElement('div'); t.id = 'jb-toast'; document.body.appendChild(t); }
+    t.textContent = msg;
+    t.className = isError ? 'show error' : 'show';
+    clearTimeout(t._timer);
+    t._timer = setTimeout(function () { t.className = ''; }, 3200);
+  }
+
+  // ---------- text editing ----------------------------------------------
+  var TEXT_SELECTORS = 'h1, h2, h3, h4, h5, h6, p, li, a, span, em, strong, td, blockquote, label, dd, dt';
+  function makeEditable() {
+    document.querySelectorAll(TEXT_SELECTORS).forEach(function (el) {
+      if (el.closest('#jb-toolbar, #jb-modal, #jb-toast, .jb-drawer, #jb-elem-panel, script, style')) return;
+      var hasText = Array.prototype.some.call(el.childNodes, function (n) { return n.nodeType === 3 && n.textContent.trim().length > 0; });
+      if (!hasText) return;
+      el.setAttribute('data-jb-editable', '');
+      el.setAttribute('contenteditable', 'true');
+      el.addEventListener('focus', function () {
+        status('editing -- click away to commit');
+        openElementPanel(el);
+      });
+      el.addEventListener('blur', function () { status('changes pending -- press Save to push live'); });
+    });
+  }
+
+  // ====================================================================
+  // ---------- BG MODE (v3.2) ------------------------------------------
+  // ====================================================================
+  // Click the "BG" button in toolbar to enter background-picker mode.
+  // Cursor becomes a crosshair. Hover any element with a non-transparent
+  // background and it gets a yellow outline. Click → small color picker
+  // popover opens anchored to that element. Pick a color → applied as
+  // inline `background-color` style. Escape or BG button again exits.
+  //
+  // Why walk UP the DOM: when user clicks a small element (a button label,
+  // a paragraph) inside a colored section, they probably mean "change the
+  // section's background" not "set a background-color on this paragraph."
+  // We walk up to the nearest ancestor with a non-transparent computed
+  // background-color and operate on THAT.
+  //
+  // Gradients: if the target uses background-image (gradient), our solid
+  // color-color override won't visually replace it -- need to also wipe
+  // background-image to a "none" override. We do that for the user.
+  // ====================================================================
+
+  var bgModeActive = false;
+  var bgHoverEl = null;
+  var bgBanner = null;
+  var bgPopover = null;
+
+  function findBgTarget(el) {
+    // Walk up from el to the first ancestor with a non-transparent computed
+    // background-color OR a background-image.
+    while (el && el !== document.body) {
+      if (el.closest && el.closest('#jb-toolbar, #jb-modal, #jb-toast, .jb-drawer, #jb-elem-panel, #jb-bg-popover, #jb-bg-banner')) return null;
+      var cs = getComputedStyle(el);
+      var bg = cs.backgroundColor;
+      var img = cs.backgroundImage;
+      var hasBg = bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent';
+      var hasGrad = img && img !== 'none';
+      if (hasBg || hasGrad) return el;
+      el = el.parentElement;
+    }
+    return el === document.body ? document.body : null;
+  }
+
+  function describeEl(el) {
+    var tag = el.tagName.toLowerCase();
+    var cls = el.className && typeof el.className === 'string' ? '.' + el.className.split(' ').filter(Boolean).slice(0, 2).join('.') : '';
+    return '<' + tag + '>' + cls;
+  }
+
+  function bgHoverHandler(e) {
+    if (!bgModeActive) return;
+    var t = findBgTarget(e.target);
+    if (bgHoverEl && bgHoverEl !== t) bgHoverEl.removeAttribute('data-jb-bg-hover');
+    if (t) { t.setAttribute('data-jb-bg-hover', ''); bgHoverEl = t; }
+  }
+  function bgClickHandler(e) {
+    if (!bgModeActive) return;
+    var t = findBgTarget(e.target);
+    if (!t) return;
+    e.preventDefault(); e.stopPropagation();
+    openBgPopover(t, e.clientX, e.clientY);
+  }
+  function bgKeyHandler(e) { if (bgModeActive && e.key === 'Escape') exitBgMode(); }
+
+  function enterBgMode() {
+    if (bgModeActive) { exitBgMode(); return; }
+    // Close any open per-element panel so its events don't conflict
+    closeElementPanel();
+    bgModeActive = true;
+    document.body.classList.add('jb-bg-mode');
+    document.getElementById('jb-bg').classList.add('active');
+    // Show banner
+    bgBanner = document.createElement('div');
+    bgBanner.id = 'jb-bg-banner';
+    bgBanner.textContent = 'BG mode -- click any colored area to recolor. Press Esc to exit.';
+    document.body.appendChild(bgBanner);
+    document.body.addEventListener('mousemove', bgHoverHandler, true);
+    document.body.addEventListener('click', bgClickHandler, true);
+    document.addEventListener('keydown', bgKeyHandler, true);
+    status('BG mode active -- click any colored area');
+  }
+  function exitBgMode() {
+    bgModeActive = false;
+    document.body.classList.remove('jb-bg-mode');
+    document.getElementById('jb-bg').classList.remove('active');
+    if (bgHoverEl) { bgHoverEl.removeAttribute('data-jb-bg-hover'); bgHoverEl = null; }
+    if (bgBanner) { bgBanner.parentNode.removeChild(bgBanner); bgBanner = null; }
+    closeBgPopover();
+    document.body.removeEventListener('mousemove', bgHoverHandler, true);
+    document.body.removeEventListener('click', bgClickHandler, true);
+    document.removeEventListener('keydown', bgKeyHandler, true);
+    status('click text, image, or trash icon');
+  }
+  function closeBgPopover() {
+    if (bgPopover) { try { bgPopover.parentNode.removeChild(bgPopover); } catch (e) {} bgPopover = null; }
+  }
+  function openBgPopover(targetEl, x, y) {
+    closeBgPopover();
+    var cs = getComputedStyle(targetEl);
+    var currentRgb = cs.backgroundColor;
+    var currentHex = rgbToHex(currentRgb);
+    var hasGrad = cs.backgroundImage && cs.backgroundImage !== 'none';
+
+    bgPopover = document.createElement('div');
+    bgPopover.id = 'jb-bg-popover';
+    bgPopover.innerHTML = [
+      '<div class="jb-bg-pop-head">Background color</div>',
+      '<div class="jb-bg-pop-tag">' + describeEl(targetEl) + (hasGrad ? ' (gradient detected)' : '') + '</div>',
+      '<div class="jb-bg-pop-row">',
+      '  <input type="color" id="jb-bg-color" value="' + currentHex + '" />',
+      '  <input type="text" id="jb-bg-hex" value="' + currentHex + '" />',
+      '</div>',
+      (hasGrad ? '<label style="display:flex;align-items:center;gap:6px;font-size:11px;color:#94a3b8;margin-top:6px"><input type="checkbox" id="jb-bg-killgrad" checked /> Remove the existing gradient</label>' : ''),
+      '<div class="jb-bg-pop-actions">',
+      '  <button id="jb-bg-clear">Clear override</button>',
+      '  <button id="jb-bg-cancel">Cancel</button>',
+      '  <button id="jb-bg-apply" class="primary">Apply</button>',
+      '</div>'
+    ].join('');
+    document.body.appendChild(bgPopover);
+    // Position near click, but keep inside viewport
+    var rect = bgPopover.getBoundingClientRect();
+    var px = Math.min(x + 12, window.innerWidth - rect.width - 12);
+    var py = Math.min(y + 12, window.innerHeight - rect.height - 12);
+    bgPopover.style.left = (px + window.scrollX) + 'px';
+    bgPopover.style.top  = (py + window.scrollY) + 'px';
+
+    var colorIn = document.getElementById('jb-bg-color');
+    var hexIn = document.getElementById('jb-bg-hex');
+    var killGrad = document.getElementById('jb-bg-killgrad');
+    colorIn.addEventListener('input', function () {
+      hexIn.value = colorIn.value;
+      targetEl.style.backgroundColor = colorIn.value;
+      if (killGrad && killGrad.checked) targetEl.style.backgroundImage = 'none';
+    });
+    hexIn.addEventListener('change', function () {
+      var v = hexIn.value.trim();
+      if (/^#[0-9a-fA-F]{3,8}$/.test(v)) {
+        targetEl.style.backgroundColor = v;
+        colorIn.value = v.length === 7 ? v : colorIn.value;
+        if (killGrad && killGrad.checked) targetEl.style.backgroundImage = 'none';
+      }
+    });
+    document.getElementById('jb-bg-clear').onclick = function () {
+      targetEl.style.backgroundColor = '';
+      targetEl.style.backgroundImage = '';
+      closeBgPopover();
+      status('background override cleared -- press Save');
+    };
+    document.getElementById('jb-bg-cancel').onclick = closeBgPopover;
+    document.getElementById('jb-bg-apply').onclick = function () {
+      closeBgPopover();
+      toast('Background updated. Press Save to push it live.');
+      status('background changed -- press Save');
+    };
+  }
+  // ---------- end BG mode -----------------------------------------------
+
+  // ====================================================================
+  // ---------- drop-logo-to-rebrand (v3.1) -----------------------------
+  // ====================================================================
+  //
+  // CRITICAL DESIGN RULE — THE LOGO MUST FLOW WITH THE WEBSITE.
+  // ============================================================
+  // The dropped logo should NEVER look like a foreign sticker pasted on
+  // top of the site. The logo's artwork (typography, brushwork, icons)
+  // should appear to sit DIRECTLY ON the website background — as if it
+  // were printed signage, not a JPEG dropped on a page.
+  //
+  // What this means in practice:
+  //   1. The logo's solid background (most logos come on white or black)
+  //      MUST be visually removed before display. We do this with CSS
+  //      mix-blend-mode:
+  //        - dark sites  → `mix-blend-mode: screen`   (drops black bg)
+  //        - light sites → `mix-blend-mode: multiply` (drops white bg)
+  //      Picked automatically based on site body background luminance.
+  //   2. NEVER apply border-radius: 50% to the logo. That makes it look
+  //      like a social-media profile avatar, not a brand mark. The logo
+  //      is signage — square / natural aspect ratio, no clip mask.
+  //   3. The container around the <img> should be transparent — no
+  //      background-color, no border, no shadow. Let the logo's own
+  //      artwork carry visual weight via contrast/brightness filters.
+  //   4. Make sure the IMAGE FILE itself sits on the same background as
+  //      the site, NOT framed in its own block. Visually the logo's
+  //      artwork should appear to float on the same canvas as everything
+  //      else around it.
+  //
+  // This is the same rule from CLAUDE.md "NEVER frame the logo in a circle"
+  // and "LOGO IS THE CENTER OF ATTENTION" — enforced in code so the
+  // dropped logo automatically flows with the site, never overrides it.
+  //
+  // ====================================================================
+
+  var logoExtracted = null; // { logoDataUrl, palette, bgIsDark }
+
+  function openLogoModal() {
+    var modal = document.createElement('div');
+    modal.id = 'jb-modal';
+    modal.innerHTML = [
+      '<div class="jb-modal-card" style="max-width:560px">',
+      '  <h3>Drop logo → rebrand the site</h3>',
+      '  <p style="margin-bottom:14px">Drop the company\'s logo here. The site will adopt its colors and the logo will be placed in the header + footer (with its background visually dropped so it blends with the page — never as a sticker).</p>',
+      '  <label id="jb-logo-drop" style="display:block;border:3px dashed #f59e0b;border-radius:10px;padding:32px 18px;text-align:center;cursor:pointer;background:#1a1408;transition:all 0.15s">',
+      '    <input id="jb-logo-file" type="file" accept="image/*" style="display:none" />',
+      '    <div style="font-size:42px;line-height:1;margin-bottom:10px">🎨</div>',
+      '    <div style="font-size:16px;font-weight:600;color:#fbbf24;margin-bottom:6px">Tap or drop your logo</div>',
+      '    <div style="font-size:12px;color:#94a3b8">PNG, JPG, or SVG. Transparent or solid background — both work.</div>',
+      '  </label>',
+      '  <div id="jb-logo-result" style="display:none;margin-top:16px"></div>',
+      '  <div class="jb-modal-actions">',
+      '    <button id="jb-logo-cancel">Cancel</button>',
+      '    <button id="jb-logo-apply" class="primary" style="display:none">Apply to site</button>',
+      '  </div>',
+      '</div>'
+    ].join('');
+    document.body.appendChild(modal);
+
+    var dropZone = document.getElementById('jb-logo-drop');
+    var fileInput = document.getElementById('jb-logo-file');
+    var resultEl = document.getElementById('jb-logo-result');
+    var applyBtn = document.getElementById('jb-logo-apply');
+
+    function close() { try { document.body.removeChild(modal); } catch (e) {} }
+    document.getElementById('jb-logo-cancel').onclick = close;
+    modal.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+
+    function handleFile(file) {
+      if (!file || !/^image\//.test(file.type)) { alert('Pick an image file (PNG, JPG, or SVG).'); return; }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var dataUrl = e.target.result;
+        analyzeLogo(dataUrl, function (palette, bgIsDark) {
+          logoExtracted = { logoDataUrl: dataUrl, palette: palette, bgIsDark: bgIsDark };
+          renderLogoPreview(resultEl, dataUrl, palette, bgIsDark);
+          applyBtn.style.display = '';
+        });
+      };
+      reader.readAsDataURL(file);
+    }
+    fileInput.addEventListener('change', function (e) { handleFile(e.target.files && e.target.files[0]); });
+    dropZone.addEventListener('dragover', function (e) { e.preventDefault(); dropZone.style.borderColor = '#10b981'; });
+    dropZone.addEventListener('dragleave', function () { dropZone.style.borderColor = '#f59e0b'; });
+    dropZone.addEventListener('drop', function (e) {
+      e.preventDefault(); dropZone.style.borderColor = '#f59e0b';
+      var dt = e.dataTransfer;
+      if (dt && dt.files && dt.files[0]) handleFile(dt.files[0]);
+    });
+
+    applyBtn.onclick = function () {
+      applyLogoToSite(logoExtracted, applyBtn, function () { close(); });
+    };
+  }
+
+  // Color extraction via canvas pixel sampling. Buckets pixels by a
+  // coarse 6-bit-per-channel quantization, drops near-grayscale, returns
+  // top frequency colors.
+  function analyzeLogo(dataUrl, cb) {
+    var img = new Image();
+    img.crossOrigin = 'anonymous';
+    img.onload = function () {
+      var canvas = document.createElement('canvas');
+      var maxDim = 200; // downsample for speed; still preserves color stats
+      var scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+      canvas.width = Math.round(img.width * scale);
+      canvas.height = Math.round(img.height * scale);
+      var ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+      var data;
+      try { data = ctx.getImageData(0, 0, canvas.width, canvas.height).data; }
+      catch (e) { alert('Could not read pixels (cross-origin?). Try a different image.'); return; }
+
+      // Determine if the LOGO ITSELF is on a dark or light background
+      // by sampling the 4 corners — these are nearly always the logo's
+      // background pad.
+      var corners = [
+        [0, 0], [canvas.width - 1, 0], [0, canvas.height - 1], [canvas.width - 1, canvas.height - 1]
+      ];
+      var cornerLum = 0, cornerCount = 0;
+      corners.forEach(function (p) {
+        var i = (p[1] * canvas.width + p[0]) * 4;
+        var a = data[i + 3];
+        if (a > 100) { cornerLum += (data[i] * 0.299 + data[i + 1] * 0.587 + data[i + 2] * 0.114); cornerCount++; }
+      });
+      var avgCornerLum = cornerCount > 0 ? cornerLum / cornerCount : 128;
+      // Sample the SITE'S body background for the blend-mode decision
+      var bodyBg = getComputedStyle(document.body).backgroundColor;
+      var bodyRgb = bodyBg.match(/\d+/g) || [255, 255, 255];
+      var siteLum = bodyRgb[0] * 0.299 + bodyRgb[1] * 0.587 + bodyRgb[2] * 0.114;
+      var bgIsDark = siteLum < 128;
+
+      // Color frequency bucketing -- skip transparent, skip very light, skip very dark,
+      // skip near-grayscale (chroma < 25).
+      var buckets = {};
+      for (var i = 0; i < data.length; i += 4) {
+        var r = data[i], g = data[i + 1], b = data[i + 2], a = data[i + 3];
+        if (a < 100) continue;
+        var max = Math.max(r, g, b), min = Math.min(r, g, b);
+        var chroma = max - min;
+        var lum = r * 0.299 + g * 0.587 + b * 0.114;
+        if (lum > 240 || lum < 18) continue; // skip near-white / near-black
+        if (chroma < 18 && lum > 200) continue; // skip light grays (background)
+        // Quantize to 5-bit/channel buckets
+        var key = (r >> 3) + ',' + (g >> 3) + ',' + (b >> 3);
+        if (!buckets[key]) buckets[key] = { r: 0, g: 0, b: 0, n: 0, chroma: 0 };
+        buckets[key].r += r; buckets[key].g += g; buckets[key].b += b;
+        buckets[key].chroma += chroma;
+        buckets[key].n++;
+      }
+      var arr = Object.keys(buckets).map(function (k) {
+        var b = buckets[k];
+        return { r: Math.round(b.r / b.n), g: Math.round(b.g / b.n), bb: Math.round(b.b / b.n), n: b.n, chroma: b.chroma / b.n };
+      });
+      arr.sort(function (a, b) { return b.n - a.n; });
+      // Take top 6 unique-enough colors (skip near-duplicates)
+      var picked = [];
+      for (var k = 0; k < arr.length && picked.length < 6; k++) {
+        var c = arr[k];
+        var dup = picked.some(function (p) {
+          return Math.abs(p.r - c.r) < 30 && Math.abs(p.g - c.g) < 30 && Math.abs(p.b - c.bb) < 30;
+        });
+        if (!dup) picked.push(c);
+      }
+      var palette = picked.map(function (c) {
+        function h(n) { var s = n.toString(16); return s.length === 1 ? '0' + s : s; }
+        return { hex: '#' + h(c.r) + h(c.g) + h(c.bb), r: c.r, g: c.g, b: c.bb, chroma: c.chroma };
+      });
+      cb(palette, bgIsDark);
+    };
+    img.onerror = function () { alert('Could not load that image.'); };
+    img.src = dataUrl;
+  }
+
+  function renderLogoPreview(container, dataUrl, palette, bgIsDark) {
+    var blendNote = bgIsDark
+      ? 'Logo will use `mix-blend-mode: screen` to drop its black background — only the artwork floats on the page.'
+      : 'Logo will use `mix-blend-mode: multiply` to drop its white background — only the artwork sits on the page.';
+    var blendMode = bgIsDark ? 'screen' : 'multiply';
+    var previewBg = bgIsDark ? '#0a0e1a' : '#fff';
+    var html = [
+      '<div style="padding:14px;background:' + previewBg + ';border-radius:8px;text-align:center;margin-bottom:12px;border:1px solid #2a3358">',
+      '  <img src="' + dataUrl + '" style="max-height:90px;max-width:100%;mix-blend-mode:' + blendMode + ';filter:contrast(1.15) brightness(1.05)" />',
+      '</div>',
+      '<p style="font-size:11px;color:#10b981;margin-bottom:12px"><strong>Flowing with the site:</strong> ' + blendNote + '</p>',
+      '<p style="font-size:12px;color:#94a3b8;margin-bottom:8px">Extracted brand colors. The most-saturated becomes <strong style="color:#fbbf24">--accent</strong>, the darkest becomes <strong style="color:#fbbf24">--primary</strong>.</p>',
+      '<div style="display:flex;gap:8px;flex-wrap:wrap">'
+    ];
+    palette.forEach(function (c) {
+      html.push('<div style="width:56px;text-align:center"><div style="width:56px;height:56px;background:' + c.hex + ';border-radius:6px;border:1px solid #2a3358"></div><div style="font-family:monospace;font-size:10px;color:#94a3b8;margin-top:4px">' + c.hex + '</div></div>');
+    });
+    html.push('</div>');
+    container.innerHTML = html.join('');
+    container.style.display = '';
+  }
+
+  function applyLogoToSite(data, btn, done) {
+    if (!data || !data.palette || data.palette.length === 0) return;
+    btn.disabled = true; btn.textContent = 'Uploading...';
+    var token = getStoredToken();
+    if (!token) {
+      promptForToken().then(function (t) {
+        if (!t) { btn.disabled = false; btn.textContent = 'Apply to site'; return; }
+        doApply(t);
+      });
+    } else { doApply(token); }
+
+    function doApply(token) {
+      // 1) Compress logo, upload to GitHub /logo.png
+      var dataUrl = data.logoDataUrl;
+      // Re-encode any uploaded JPG/PNG as PNG so transparency is preserved
+      var img = new Image();
+      img.onload = function () {
+        var canvas = document.createElement('canvas');
+        var max = 800;
+        var sc = Math.min(1, max / Math.max(img.width, img.height));
+        canvas.width = Math.round(img.width * sc);
+        canvas.height = Math.round(img.height * sc);
+        canvas.getContext('2d').drawImage(img, 0, 0, canvas.width, canvas.height);
+        var pngData = canvas.toDataURL('image/png');
+        uploadImageToGitHub(token, pngData, 'logo.png', function (path, err) {
+          if (err) { alert('Logo upload failed: ' + err); btn.disabled = false; btn.textContent = 'Apply to site'; return; }
+          // 2) Place logo image in header + footer (replace existing logo/wordmark)
+          placeLogoInDocument(dataUrl, '/logo.png', data.bgIsDark);
+          // 3) Apply extracted palette to CSS variables
+          applyPaletteToVars(data.palette);
+          toast('Rebranded! Press Save to push it live.');
+          status('logo applied + colors swapped -- press Save');
+          done();
+        });
+      };
+      img.src = dataUrl;
+    }
+  }
+
+  // CRITICAL: This function enforces the "logo flows with the site" rule.
+  // The logo <img> gets inline styles that:
+  //   - drop the original background via mix-blend-mode (screen/multiply)
+  //   - bump contrast + brightness so artwork pops
+  //   - have NO border-radius (never a circular frame)
+  //   - have NO background or shadow on the container
+  // The data-jb-saved-src attr is what serializeForSave uses to swap the
+  // live data: URL for the committed /logo.png path before push.
+  function placeLogoInDocument(previewDataUrl, savedPath, bgIsDark) {
+    var blendMode = bgIsDark ? 'screen' : 'multiply';
+    var logoStyle = 'height:48px;width:auto;mix-blend-mode:' + blendMode + ';filter:contrast(1.15) brightness(1.05);display:block';
+
+    function makeLogoImg(heightPx, extraFilter) {
+      var img = document.createElement('img');
+      img.src = previewDataUrl;
+      img.setAttribute('data-jb-saved-src', savedPath);
+      img.setAttribute('alt', 'Logo');
+      img.style.cssText = logoStyle.replace('48px', heightPx + 'px') + (extraFilter ? ';' + extraFilter : '');
+      // Re-bind editor handlers on this new image
+      img.setAttribute('data-jb-image', '');
+      return img;
+    }
+
+    // Header logo (anchor with class logo-wordmark is the standard slot)
+    var headerLogo = document.querySelector('header .logo-wordmark, header .logo, header img.logo');
+    if (headerLogo) {
+      headerLogo.innerHTML = '';
+      headerLogo.appendChild(makeLogoImg(48));
+    }
+    // Footer logo (footer-brand is the standard slot)
+    var footerLogo = document.querySelector('footer .footer-brand, footer .logo, footer img.logo');
+    if (footerLogo) {
+      footerLogo.innerHTML = '';
+      // Footer is dark on most sites -- always use screen blend in footer
+      var img = makeLogoImg(54);
+      img.style.mixBlendMode = 'screen';
+      img.style.filter = 'brightness(1) invert(0.92)';
+      footerLogo.appendChild(img);
+    }
+  }
+
+  function applyPaletteToVars(palette) {
+    if (!palette.length) return;
+    // Most-saturated color (highest chroma) → --accent
+    var byChroma = palette.slice().sort(function (a, b) { return b.chroma - a.chroma; });
+    var accent = byChroma[0];
+    // Darkest color → --primary  (lowest luminance)
+    var byLum = palette.slice().sort(function (a, b) {
+      var la = a.r * 0.299 + a.g * 0.587 + a.b * 0.114;
+      var lb = b.r * 0.299 + b.g * 0.587 + b.b * 0.114;
+      return la - lb;
+    });
+    var primary = byLum[0];
+    // Map onto every CSS var that LOOKS like a primary/accent slot
+    var vars = detectRootVars();
+    Object.keys(vars).forEach(function (name) {
+      var n = name.toLowerCase();
+      if (/(accent|cta|highlight|brand)/.test(n)) document.documentElement.style.setProperty(name, accent.hex);
+      else if (/(primary|deep|dark)/.test(n) && !/soft/.test(n)) document.documentElement.style.setProperty(name, primary.hex);
+    });
+  }
+  // ---------- end drop-logo feature -------------------------------------
+
+  // ---------- per-element style panel (v3) ------------------------------
+  // Floating control panel that anchors at bottom-right (desktop) or
+  // bottom-strip (mobile) whenever an editable element is focused. Lets
+  // you change just THIS element's font / size / weight / spacing / color
+  // / alignment without touching anything else on the site.
+  var elemPanel, currentElem;
+  function buildElementPanel() {
+    elemPanel = document.createElement('div');
+    elemPanel.id = 'jb-elem-panel';
+    var fontOpts = ELEMENT_FONTS.map(function (f) { return '<option value="' + f.family + '">' + f.label + '</option>'; }).join('');
+    elemPanel.innerHTML = [
+      '<div class="jb-elem-head">',
+      '  <span class="jb-elem-title">Element Style</span>',
+      '  <button class="jb-elem-close" aria-label="Close">×</button>',
+      '</div>',
+      '<div class="jb-elem-target" id="jb-elem-target">No element selected</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Font</label>',
+      '  <select id="jb-elem-font">' + fontOpts + '</select>',
+      '</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Size</label>',
+      '  <input type="range" id="jb-elem-size" min="10" max="120" step="1" />',
+      '  <span class="jb-elem-val" id="jb-elem-size-val">--</span>',
+      '</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Weight</label>',
+      '  <select id="jb-elem-weight">',
+      '    <option value="">(default)</option>',
+      '    <option value="300">300 Light</option>',
+      '    <option value="400">400 Regular</option>',
+      '    <option value="500">500 Medium</option>',
+      '    <option value="600">600 Semibold</option>',
+      '    <option value="700">700 Bold</option>',
+      '    <option value="800">800 Black</option>',
+      '  </select>',
+      '</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Spacing</label>',
+      '  <input type="range" id="jb-elem-track" min="-5" max="40" step="1" />',
+      '  <span class="jb-elem-val" id="jb-elem-track-val">--</span>',
+      '</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Color</label>',
+      '  <input type="color" id="jb-elem-color" />',
+      '  <span class="jb-elem-val" id="jb-elem-color-val" style="font-size:10px">--</span>',
+      '</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Align</label>',
+      '  <div class="jb-btn-group" id="jb-elem-align">',
+      '    <button data-align="left">L</button>',
+      '    <button data-align="center">C</button>',
+      '    <button data-align="right">R</button>',
+      '  </div>',
+      '</div>',
+      '<div class="jb-elem-row">',
+      '  <label>Case</label>',
+      '  <div class="jb-btn-group" id="jb-elem-case">',
+      '    <button data-case="none">aa</button>',
+      '    <button data-case="uppercase">AA</button>',
+      '    <button data-case="capitalize">Aa</button>',
+      '  </div>',
+      '</div>',
+      '<button class="jb-elem-reset" id="jb-elem-reset">Reset overrides on this element</button>'
+    ].join('');
+    document.body.appendChild(elemPanel);
+
+    elemPanel.querySelector('.jb-elem-close').onclick = closeElementPanel;
+    document.getElementById('jb-elem-font').addEventListener('change', function (e) {
+      if (!currentElem) return;
+      var fam = e.target.value;
+      if (fam) { loadFont(fam); currentElem.style.fontFamily = '"' + fam + '", sans-serif'; }
+      else { currentElem.style.fontFamily = ''; }
+      status('font changed -- press Save');
+    });
+    var sizeSlider = document.getElementById('jb-elem-size');
+    var sizeVal    = document.getElementById('jb-elem-size-val');
+    sizeSlider.addEventListener('input', function () {
+      if (!currentElem) return;
+      currentElem.style.fontSize = sizeSlider.value + 'px';
+      sizeVal.textContent = sizeSlider.value + 'px';
+      status('size changed -- press Save');
+    });
+    document.getElementById('jb-elem-weight').addEventListener('change', function (e) {
+      if (!currentElem) return;
+      currentElem.style.fontWeight = e.target.value;
+      status('weight changed -- press Save');
+    });
+    var trackSlider = document.getElementById('jb-elem-track');
+    var trackVal    = document.getElementById('jb-elem-track-val');
+    trackSlider.addEventListener('input', function () {
+      if (!currentElem) return;
+      var v = parseInt(trackSlider.value, 10);
+      // Convert 0-40 to letter-spacing in em (multiply by 0.01)
+      currentElem.style.letterSpacing = (v * 0.01).toFixed(2) + 'em';
+      trackVal.textContent = (v * 0.01).toFixed(2) + 'em';
+      status('spacing changed -- press Save');
+    });
+    var colorPicker = document.getElementById('jb-elem-color');
+    var colorVal    = document.getElementById('jb-elem-color-val');
+    colorPicker.addEventListener('input', function () {
+      if (!currentElem) return;
+      currentElem.style.color = colorPicker.value;
+      colorVal.textContent = colorPicker.value;
+      status('color changed -- press Save');
+    });
+    elemPanel.querySelectorAll('#jb-elem-align button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (!currentElem) return;
+        currentElem.style.textAlign = btn.dataset.align;
+        elemPanel.querySelectorAll('#jb-elem-align button').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        status('align changed -- press Save');
+      });
+    });
+    elemPanel.querySelectorAll('#jb-elem-case button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        if (!currentElem) return;
+        currentElem.style.textTransform = btn.dataset.case;
+        elemPanel.querySelectorAll('#jb-elem-case button').forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        status('case changed -- press Save');
+      });
+    });
+    document.getElementById('jb-elem-reset').addEventListener('click', function () {
+      if (!currentElem) return;
+      ['fontFamily', 'fontSize', 'fontWeight', 'letterSpacing', 'color', 'textAlign', 'textTransform'].forEach(function (p) { currentElem.style[p] = ''; });
+      populateElementPanel(currentElem);
+      status('overrides cleared on this element');
+    });
+  }
+  function openElementPanel(el) {
+    if (!elemPanel) buildElementPanel();
+    currentElem = el;
+    populateElementPanel(el);
+    elemPanel.classList.add('open');
+  }
+  function closeElementPanel() {
+    if (elemPanel) elemPanel.classList.remove('open');
+    currentElem = null;
+  }
+  function populateElementPanel(el) {
+    var tag = el.tagName.toLowerCase();
+    var snippet = (el.textContent || '').trim().slice(0, 40);
+    document.getElementById('jb-elem-target').textContent = '<' + tag + '> ' + snippet + (snippet.length >= 40 ? '...' : '');
+    var cs = getComputedStyle(el);
+    // Font dropdown -- attempt to match current; else show "(current)"
+    var fontSelect = document.getElementById('jb-elem-font');
+    var firstFamily = (el.style.fontFamily || '').replace(/['"]/g, '').split(',')[0].trim();
+    var matched = false;
+    Array.prototype.forEach.call(fontSelect.options, function (opt) {
+      if (opt.value && opt.value === firstFamily) { opt.selected = true; matched = true; }
+    });
+    if (!matched) fontSelect.value = '';
+    // Size slider
+    var sizeSlider = document.getElementById('jb-elem-size');
+    var sizeVal    = document.getElementById('jb-elem-size-val');
+    var sizePx = parseFloat(cs.fontSize) || 16;
+    sizeSlider.value = Math.max(10, Math.min(120, Math.round(sizePx)));
+    sizeVal.textContent = Math.round(sizePx) + 'px';
+    // Weight
+    var weightSelect = document.getElementById('jb-elem-weight');
+    weightSelect.value = el.style.fontWeight || '';
+    // Letter spacing
+    var trackSlider = document.getElementById('jb-elem-track');
+    var trackVal    = document.getElementById('jb-elem-track-val');
+    var trackEm = parseFloat(cs.letterSpacing) / sizePx || 0;
+    var trackInt = Math.max(-5, Math.min(40, Math.round(trackEm * 100)));
+    trackSlider.value = trackInt;
+    trackVal.textContent = (trackInt * 0.01).toFixed(2) + 'em';
+    // Color
+    var colorPicker = document.getElementById('jb-elem-color');
+    var colorVal    = document.getElementById('jb-elem-color-val');
+    var rgb = cs.color;
+    var hex = rgbToHex(rgb);
+    colorPicker.value = hex;
+    colorVal.textContent = hex;
+    // Align
+    var align = cs.textAlign;
+    elemPanel.querySelectorAll('#jb-elem-align button').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.align === align);
+    });
+    // Case
+    var tcase = cs.textTransform;
+    elemPanel.querySelectorAll('#jb-elem-case button').forEach(function (b) {
+      b.classList.toggle('active', b.dataset.case === tcase);
+    });
+  }
+  function rgbToHex(rgb) {
+    var m = rgb && rgb.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)/);
+    if (!m) return '#000000';
+    function h(n) { var s = parseInt(n, 10).toString(16); return s.length === 1 ? '0' + s : s; }
+    return '#' + h(m[1]) + h(m[2]) + h(m[3]);
+  }
+
+  // ---------- image editing ---------------------------------------------
+  function bindImages() {
+    document.querySelectorAll('img').forEach(function (img) {
+      if (img.closest('#jb-toolbar, #jb-modal, #jb-toast, .jb-drawer')) return;
+      img.setAttribute('data-jb-image', '');
+      img.addEventListener('click', function (e) {
+        if (e.target.contentEditable === 'true') return;
+        if (e.target.classList && e.target.classList.contains('jb-del-btn')) return;
+        promptImageReplace(img);
+      });
+    });
+  }
+
+  function stripPlaceholderComment(img) {
+    var prev = img.previousSibling;
+    while (prev && prev.nodeType === 8) {
+      if (/REPLACE WITH REAL PHOTO/i.test(prev.textContent)) { prev.parentNode.removeChild(prev); return; }
+      prev = prev.previousSibling;
+    }
+  }
+
+  function compressImage(file, cb) {
+    var reader = new FileReader();
+    reader.onerror = function () { cb(null, 'Failed to read file'); };
+    reader.onload = function (e) {
+      var imgEl = new Image();
+      imgEl.onerror = function () { cb(null, 'Failed to decode image'); };
+      imgEl.onload = function () {
+        var MAX_W = 1600;
+        var scale = Math.min(1, MAX_W / imgEl.width);
+        var w = Math.round(imgEl.width * scale);
+        var h = Math.round(imgEl.height * scale);
+        var canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(imgEl, 0, 0, w, h);
+        try { cb(canvas.toDataURL('image/jpeg', 0.82), null); }
+        catch (err) { cb(null, 'Failed to compress: ' + (err.message || 'unknown')); }
+      };
+      imgEl.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  }
+
+  function uploadImageToGitHub(token, base64DataUrl, filename, cb) {
+    var commaIdx = base64DataUrl.indexOf(',');
+    var b64 = commaIdx >= 0 ? base64DataUrl.slice(commaIdx + 1) : base64DataUrl;
+    var path = 'img/' + filename;
+    var url = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + path;
+    fetch(url, {
+      method: 'PUT', headers: ghHeaders(token),
+      body: JSON.stringify({ message: 'Upload image via visual editor', content: b64, branch: GH_BRANCH })
+    }).then(function (r) {
+      if (!r.ok) { return r.json().catch(function () { return {}; }).then(function (data) { cb(null, 'GitHub upload failed (' + r.status + '): ' + (data.message || 'unknown')); }); }
+      return r.json().then(function () { cb('/' + path, null); });
+    }).catch(function (err) { cb(null, 'Network error: ' + (err.message || 'unknown')); });
+  }
+
+  function promptImageReplace(img) {
+    // v2 image modal -- no tabs. Big tap-to-pick area is the obvious action
+    // for phone users (most common path). Drag-and-drop works on desktop.
+    // URL paste is collapsed in a small <details> at the bottom for power users.
+    var modal = document.createElement('div');
+    modal.id = 'jb-modal';
+    modal.innerHTML = [
+      '<div class="jb-modal-card" style="max-width:520px">',
+      '  <h3>Replace image</h3>',
+      '  <label id="jb-drop" style="display:block;border:3px dashed #f59e0b;border-radius:10px;padding:32px 18px;text-align:center;cursor:pointer;background:#1a1408;transition:all 0.15s">',
+      '    <input id="jb-file" type="file" accept="image/*" style="display:none" />',
+      '    <div style="font-size:42px;line-height:1;margin-bottom:10px">📷</div>',
+      '    <div style="font-size:16px;font-weight:600;color:#fbbf24;margin-bottom:6px">Tap to pick a photo</div>',
+      '    <div style="font-size:12px;color:#94a3b8">from your camera roll, files, or drag & drop here</div>',
+      '  </label>',
+      '  <div id="jb-upload-status" style="margin-top:10px;font-size:12px;color:#94a3b8;min-height:18px;text-align:center"></div>',
+      '  <details style="margin-top:14px;padding-top:14px;border-top:1px solid #2a3358">',
+      '    <summary style="cursor:pointer;font-size:11px;color:#94a3b8;text-transform:uppercase;letter-spacing:0.10em;padding:4px 0">or paste an image URL</summary>',
+      '    <div style="margin-top:10px">',
+      '      <input type="url" id="jb-image-url" placeholder="https://..." value="' + (img.src || '').replace(/"/g, '&quot;') + '" />',
+      '      <div style="display:flex;justify-content:flex-end;margin-top:8px">',
+      '        <button id="jb-image-ok" class="primary">Use this URL</button>',
+      '      </div>',
+      '    </div>',
+      '  </details>',
+      '  <div class="jb-modal-actions">',
+      '    <button id="jb-image-cancel">Cancel</button>',
+      '  </div>',
+      '</div>'
+    ].join('');
+    document.body.appendChild(modal);
+    var okBtn      = document.getElementById('jb-image-ok');
+    var urlInput   = document.getElementById('jb-image-url');
+    var fileInput  = document.getElementById('jb-file');
+    var dropZone   = document.getElementById('jb-drop');
+    var statusEl   = document.getElementById('jb-upload-status');
+
+    function close() { try { document.body.removeChild(modal); } catch (e) {} }
+    document.getElementById('jb-image-cancel').onclick = close;
+
+    okBtn.onclick = function () {
+      var url = urlInput.value.trim();
+      if (url) { img.src = url; stripPlaceholderComment(img); toast('Image swapped -- press Save to push it live.'); }
+      close();
+    };
+    urlInput.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') okBtn.click();
+      if (e.key === 'Escape') close();
+    });
+
+    function handleUploadFile(file) {
+      if (!file) return;
+      if (!/^image\//.test(file.type)) { statusEl.style.color = '#ef4444'; statusEl.textContent = 'Not an image file.'; return; }
+      var token = getStoredToken();
+      if (!token) { statusEl.style.color = '#ef4444'; statusEl.textContent = 'Click Save first to set up GitHub token, then upload again.'; return; }
+      statusEl.style.color = '#94a3b8'; statusEl.textContent = 'Compressing photo...';
+      compressImage(file, function (dataUrl, err) {
+        if (err) { statusEl.style.color = '#ef4444'; statusEl.textContent = err; return; }
+        statusEl.textContent = 'Uploading to GitHub...';
+        var ts = Date.now();
+        var filename = 'photo-' + ts + '.jpg';
+        uploadImageToGitHub(token, dataUrl, filename, function (path, err) {
+          if (err) {
+            if (/401/.test(err)) { clearStoredToken(); statusEl.style.color = '#ef4444'; statusEl.textContent = 'GitHub token rejected. Click Save and re-enter, then retry.'; return; }
+            statusEl.style.color = '#ef4444'; statusEl.textContent = err; return;
+          }
+          img.src = dataUrl;
+          img.setAttribute('data-jb-saved-src', path);
+          stripPlaceholderComment(img);
+          statusEl.style.color = '#10b981'; statusEl.textContent = 'Uploaded! Press Save to push it live.';
+          toast('Photo uploaded. Click Save to push it live.');
+          setTimeout(close, 1200);
+        });
+      });
+    }
+    fileInput.addEventListener('change', function (e) { handleUploadFile(e.target.files && e.target.files[0]); });
+    dropZone.addEventListener('dragover', function (e) { e.preventDefault(); dropZone.style.borderColor = '#f59e0b'; dropZone.style.background = '#1e1b15'; });
+    dropZone.addEventListener('dragleave', function () { dropZone.style.borderColor = '#475569'; dropZone.style.background = '#07090f'; });
+    dropZone.addEventListener('drop', function (e) { e.preventDefault(); dropZone.style.borderColor = '#475569'; dropZone.style.background = '#07090f'; var dt = e.dataTransfer; if (dt && dt.files && dt.files[0]) handleUploadFile(dt.files[0]); });
+    modal.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+  }
+
+  // ---------- delete / hide ---------------------------------------------
+  // Add a trash button to most user-visible block elements. Click it to
+  // hide the element (set display:none in the saved HTML). Click again to
+  // restore. Permanent deletion is intentionally not supported -- the visual
+  // editor only hides; permanent removal happens in GitHub.
+  var DELETE_SELECTORS = 'section, article, aside, header, footer, .card, .menu-card, .service-card, .review-card, .gallery-item, .menu-row, .service-row, .testimonial, blockquote, figure, .pillar, .stat-item, .hero-art-tag, .hero-art-accent, .footer-col';
+  function bindDeleteButtons() {
+    document.querySelectorAll(DELETE_SELECTORS).forEach(function (el) {
+      if (el.closest('#jb-toolbar, #jb-modal, #jb-toast, .jb-drawer')) return;
+      if (el.querySelector(':scope > .jb-del-btn')) return;
+      el.setAttribute('data-jb-deletable', '');
+      var btn = document.createElement('button');
+      btn.className = 'jb-del-btn';
+      btn.title = 'Hide this (click trash again to restore)';
+      btn.setAttribute('aria-label', 'Hide this element');
+      btn.textContent = '×';
+      btn.addEventListener('click', function (e) {
+        e.preventDefault(); e.stopPropagation();
+        toggleHidden(el);
+      });
+      if (getComputedStyle(el).position === 'static') el.style.position = 'relative';
+      el.appendChild(btn);
+    });
+  }
+  function toggleHidden(el) {
+    if (el.hasAttribute('data-jb-hidden')) {
+      el.removeAttribute('data-jb-hidden');
+      el.style.display = el.dataset.jbPrevDisplay || '';
+      delete el.dataset.jbPrevDisplay;
+      toast('Restored. Save to push live.');
+    } else {
+      el.dataset.jbPrevDisplay = el.style.display || '';
+      el.setAttribute('data-jb-hidden', '');
+      // Don't actually hide in editor -- just mark and dim. Hiding happens on save.
+      toast('Hidden. Save to push live.');
+    }
+    status('changes pending -- press Save to push live');
+  }
+
+  // ---------- style drawer ----------------------------------------------
+  // Detects CSS custom properties on :root and exposes them as color pickers.
+  // Live-applies changes via document.documentElement.style.setProperty.
+  // On save, the changes are written back into the page's :root { ... } block
+  // in the embedded <style>.
+  var styleDrawer, sectionDrawer;
+  function openStyleDrawer() {
+    closeAllDrawers();
+    if (!styleDrawer) buildStyleDrawer();
+    styleDrawer.classList.add('open');
+    document.getElementById('jb-style').classList.add('active');
+  }
+  function buildStyleDrawer() {
+    styleDrawer = document.createElement('div');
+    styleDrawer.className = 'jb-drawer';
+    var html = ['<button class="jb-drawer-close" aria-label="Close">×</button>'];
+    html.push('<h3>Colors</h3>');
+    html.push('<div id="jb-colors-list"></div>');
+    html.push('<h4>Fonts (whole site)</h4>');
+    html.push('<div id="jb-fonts-list"></div>');
+    html.push('<h4>Numbers font</h4>');
+    html.push('<p style="font-size:11px;color:#94a3b8;margin:0 0 10px">Replaces the font on every numeric stat (`.num` class or pure-digit text). Use this to fix ugly tracked numbers from display fonts.</p>');
+    html.push('<select id="jb-num-font" style="width:100%;padding:8px;background:#07090f;border:1px solid #475569;border-radius:6px;color:#e7eaf6;font-size:13px"></select>');
+    styleDrawer.innerHTML = html.join('');
+    document.body.appendChild(styleDrawer);
+    styleDrawer.querySelector('.jb-drawer-close').onclick = closeAllDrawers;
+    populateColors();
+    populateFonts();
+    populateNumberFont();
+  }
+
+  function populateNumberFont() {
+    var sel = styleDrawer.querySelector('#jb-num-font');
+    sel.innerHTML = ELEMENT_FONTS.map(function (f) { return '<option value="' + f.family + '">' + f.label + '</option>'; }).join('');
+    sel.addEventListener('change', function () { applyNumberFont(sel.value); });
+  }
+  function applyNumberFont(family) {
+    var styleEl = document.getElementById('jb-num-font-style') || document.createElement('style');
+    styleEl.id = 'jb-num-font-style';
+    if (!family) { styleEl.textContent = ''; status('reverted numbers to default font'); return; }
+    loadFont(family);
+    // Apply to .num class (used in dashboard.html) AND to any element whose
+    // text content is mostly digits (stats, prices, ratings).
+    styleEl.textContent = '.num, [class*="num "], .stat-item strong, .meta-item strong, .hero-rating .stars, .hero-rating .text, .service-price, .menu-row .price, .review-stars, .review-count, .price, .hours-list, .stat-value, .footer-bottom { font-family: "' + family + '", sans-serif !important; }';
+    document.head.appendChild(styleEl);
+    status('numbers font changed -- press Save');
+  }
+  function detectRootVars() {
+    var found = {};
+    document.querySelectorAll('style').forEach(function (s) {
+      if (/#jb-toolbar/.test(s.textContent)) return; // skip our injected style
+      var txt = s.textContent;
+      var rootMatch = txt.match(/:root\s*\{([\s\S]*?)\}/);
+      if (!rootMatch) return;
+      var body = rootMatch[1];
+      var re = /(--[a-zA-Z0-9_-]+)\s*:\s*([^;]+);/g;
+      var m;
+      while ((m = re.exec(body)) !== null) {
+        var name = m[1].trim();
+        var val = m[2].trim();
+        // Only show vars whose value is a hex color or rgb/rgba color
+        if (/^#[0-9a-fA-F]{3,8}$/.test(val) || /^rgb/.test(val)) found[name] = val;
+      }
+    });
+    return found;
+  }
+  function hexFromColor(v) {
+    if (v.charAt(0) === '#') {
+      if (v.length === 4) return '#' + v[1] + v[1] + v[2] + v[2] + v[3] + v[3];
+      if (v.length === 7) return v;
+    }
+    return null;
+  }
+  function populateColors() {
+    var list = styleDrawer.querySelector('#jb-colors-list');
+    list.innerHTML = '';
+    var vars = detectRootVars();
+    var keys = Object.keys(vars);
+    if (keys.length === 0) { list.innerHTML = '<p style="font-size:12px;color:#94a3b8">No CSS variables detected.</p>'; return; }
+    keys.forEach(function (name) {
+      var current = getComputedStyle(document.documentElement).getPropertyValue(name).trim() || vars[name];
+      var hex = hexFromColor(current);
+      var row = document.createElement('div');
+      row.className = 'jb-color-row';
+      row.innerHTML = [
+        '<input type="color" value="' + (hex || '#808080') + '" data-var="' + name + '" />',
+        '<span class="jb-var-name" title="' + name + '">' + name.replace(/^--/, '') + '</span>',
+        '<input type="text" class="jb-var-hex" value="' + (hex || current) + '" data-var-hex="' + name + '" />'
+      ].join('');
+      list.appendChild(row);
+      var picker = row.querySelector('input[type=color]');
+      var hexIn = row.querySelector('.jb-var-hex');
+      picker.addEventListener('input', function () {
+        document.documentElement.style.setProperty(name, picker.value);
+        hexIn.value = picker.value;
+        status('color changed -- press Save to push live');
+      });
+      hexIn.addEventListener('change', function () {
+        var v = hexIn.value.trim();
+        if (/^#[0-9a-fA-F]{3,8}$/.test(v)) {
+          document.documentElement.style.setProperty(name, v);
+          picker.value = hexFromColor(v) || picker.value;
+        }
+      });
+    });
+  }
+  function populateFonts() {
+    var list = styleDrawer.querySelector('#jb-fonts-list');
+    list.innerHTML = '';
+    FONT_PAIRINGS.forEach(function (p) {
+      var btn = document.createElement('button');
+      btn.className = 'jb-font-pick';
+      btn.dataset.id = p.id;
+      btn.innerHTML = '<div class="jb-font-pick-display" style="font-family:\'' + p.display + '\', serif">' + (p.id === 'current' ? '(current)' : 'Aa Sample') + '</div><div class="jb-font-pick-label">' + p.label + '</div>';
+      btn.addEventListener('click', function () {
+        Array.prototype.forEach.call(list.children, function (c) { c.classList.remove('active'); });
+        btn.classList.add('active');
+        applyFontPairing(p);
+      });
+      list.appendChild(btn);
+    });
+  }
+  function applyFontPairing(p) {
+    if (p.id === 'current') {
+      var prev = document.getElementById('jb-font-override-link');
+      if (prev) prev.remove();
+      var prevStyle = document.getElementById('jb-font-override-style');
+      if (prevStyle) prevStyle.remove();
+      status('reverted to original fonts -- press Save');
+      return;
+    }
+    var link = document.getElementById('jb-font-override-link') || document.createElement('link');
+    link.id = 'jb-font-override-link';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=' +
+                encodeURIComponent(p.display).replace(/%20/g, '+') + ':wght@400;500;700&family=' +
+                encodeURIComponent(p.body).replace(/%20/g, '+') + ':wght@300;400;500;600;700&display=swap';
+    document.head.appendChild(link);
+    var styleEl = document.getElementById('jb-font-override-style') || document.createElement('style');
+    styleEl.id = 'jb-font-override-style';
+    styleEl.textContent = 'body, p, li, a, span, td, label, button, input, blockquote { font-family: "' + p.body + '", sans-serif !important; }\n' +
+                          'h1, h2, h3, h4, h5, h6, .logo-wordmark, .footer-brand, .service-name, .service-price, .menu-cat, .hero-art-tag, .hero-art-accent, .review-text { font-family: "' + p.display + '", serif !important; }';
+    document.head.appendChild(styleEl);
+    status('font changed -- press Save');
+  }
+
+  // ---------- sections drawer -------------------------------------------
+  function openSectionDrawer() {
+    closeAllDrawers();
+    if (!sectionDrawer) buildSectionDrawer();
+    populateSections();
+    sectionDrawer.classList.add('open');
+    document.getElementById('jb-sections').classList.add('active');
+  }
+  function buildSectionDrawer() {
+    sectionDrawer = document.createElement('div');
+    sectionDrawer.className = 'jb-drawer';
+    sectionDrawer.innerHTML = '<button class="jb-drawer-close" aria-label="Close">×</button><h3>Sections on this page</h3><div id="jb-section-list"></div>';
+    document.body.appendChild(sectionDrawer);
+    sectionDrawer.querySelector('.jb-drawer-close').onclick = closeAllDrawers;
+  }
+  function populateSections() {
+    var list = sectionDrawer.querySelector('#jb-section-list');
+    list.innerHTML = '';
+    document.querySelectorAll('section').forEach(function (sec, idx) {
+      var heading = sec.querySelector('h1, h2, h3');
+      var name = heading ? heading.textContent.trim().slice(0, 40) : 'Section ' + (idx + 1);
+      var hidden = sec.hasAttribute('data-jb-hidden');
+      var row = document.createElement('div');
+      row.className = 'jb-section-row' + (hidden ? ' hidden' : '');
+      row.innerHTML = '<span class="jb-section-name">' + name + '</span><button class="jb-section-eye" title="Toggle visibility">' + (hidden ? '☓' : '✕') + '</button>';
+      row.querySelector('.jb-section-name').addEventListener('click', function () {
+        sec.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        closeAllDrawers();
+      });
+      row.querySelector('.jb-section-eye').addEventListener('click', function (e) {
+        e.stopPropagation();
+        toggleHidden(sec);
+        populateSections();
+      });
+      list.appendChild(row);
+    });
+  }
+
+  function closeAllDrawers() {
+    if (styleDrawer) styleDrawer.classList.remove('open');
+    if (sectionDrawer) sectionDrawer.classList.remove('open');
+    document.getElementById('jb-style').classList.remove('active');
+    document.getElementById('jb-sections').classList.remove('active');
+  }
+
+  // ---------- exit ------------------------------------------------------
+  function exitEditMode() {
+    if (!confirm('Exit edit mode? Unsaved changes will be lost unless you Save first.')) return;
+    window.location.href = window.location.pathname + window.location.hash;
+  }
+
+  // ---------- save ------------------------------------------------------
+  function serializeForSave() {
+    var clone = document.documentElement.cloneNode(true);
+    // Remove injected editor elements
+    ['jb-toolbar', 'jb-modal', 'jb-toast', 'jb-elem-panel', 'jb-bg-popover', 'jb-bg-banner'].forEach(function (id) { var el = clone.querySelector('#' + id); if (el) el.parentNode.removeChild(el); });
+    clone.querySelectorAll('.jb-drawer').forEach(function (el) { el.parentNode.removeChild(el); });
+    clone.querySelectorAll('.jb-del-btn').forEach(function (el) { el.parentNode.removeChild(el); });
+    // Strip BG-mode hover markers
+    clone.querySelectorAll('[data-jb-bg-hover]').forEach(function (el) { el.removeAttribute('data-jb-bg-hover'); });
+    // Remove our injected style block
+    clone.querySelectorAll('style').forEach(function (s) { if (/#jb-toolbar/.test(s.textContent)) s.parentNode.removeChild(s); });
+    // Strip edit-mode attributes
+    clone.querySelectorAll('[data-jb-editable]').forEach(function (el) { el.removeAttribute('data-jb-editable'); el.removeAttribute('contenteditable'); });
+    clone.querySelectorAll('[data-jb-image]').forEach(function (el) { el.removeAttribute('data-jb-image'); });
+    clone.querySelectorAll('[data-jb-deletable]').forEach(function (el) { el.removeAttribute('data-jb-deletable'); });
+    // Apply hidden state: convert data-jb-hidden into actual style="display:none"
+    clone.querySelectorAll('[data-jb-hidden]').forEach(function (el) {
+      el.style.display = 'none';
+      el.removeAttribute('data-jb-hidden');
+    });
+    // Image upload paths
+    clone.querySelectorAll('img[data-jb-saved-src]').forEach(function (el) {
+      var savedSrc = el.getAttribute('data-jb-saved-src');
+      if (savedSrc) el.setAttribute('src', savedSrc);
+      el.removeAttribute('data-jb-saved-src');
+    });
+    // Strip body padding override
+    var b = clone.querySelector('body');
+    if (b && b.style && b.style.paddingTop === '44px') b.style.paddingTop = '';
+    // Apply CSS variable overrides from documentElement.style into the :root block
+    var liveVars = {};
+    for (var i = 0; i < document.documentElement.style.length; i++) {
+      var name = document.documentElement.style.item(i);
+      if (name && name.indexOf('--') === 0) liveVars[name] = document.documentElement.style.getPropertyValue(name).trim();
+    }
+    if (Object.keys(liveVars).length > 0) {
+      clone.querySelectorAll('style').forEach(function (s) {
+        var txt = s.textContent;
+        var rootMatch = txt.match(/(:root\s*\{)([\s\S]*?)(\})/);
+        if (!rootMatch) return;
+        var body = rootMatch[2];
+        Object.keys(liveVars).forEach(function (k) {
+          var re = new RegExp('(' + k.replace(/-/g, '\\-') + '\\s*:\\s*)([^;]+);');
+          if (re.test(body)) body = body.replace(re, '$1' + liveVars[k] + ';');
+          else body += '\n  ' + k + ': ' + liveVars[k] + ';';
+        });
+        s.textContent = txt.replace(/:root\s*\{[\s\S]*?\}/, rootMatch[1] + body + rootMatch[3]);
+      });
+    }
+    // Persist font override: keep the <link> and <style> we injected; just rename their ids so the editor doesn't re-strip them on next load
+    var fontLink = clone.querySelector('#jb-font-override-link');
+    var fontStyle = clone.querySelector('#jb-font-override-style');
+    if (fontLink) fontLink.id = 'jb-font-baked-link';
+    if (fontStyle) fontStyle.id = 'jb-font-baked-style';
+    // Same for the numbers-font override
+    var numStyle = clone.querySelector('#jb-num-font-style');
+    if (numStyle) numStyle.id = 'jb-num-font-baked-style';
+    return '<!DOCTYPE html>\n' + clone.outerHTML;
+  }
+
+  function ghHeaders(token) { return { 'Accept': 'application/vnd.github+json', 'Authorization': 'Bearer ' + token, 'X-GitHub-Api-Version': '2022-11-28', 'Content-Type': 'application/json' }; }
+
+  function promptForToken() {
+    return new Promise(function (resolve) {
+      var modal = document.createElement('div');
+      modal.id = 'jb-modal';
+      modal.innerHTML = [
+        '<div class="jb-modal-card">',
+        '  <h3>One-time setup -- GitHub token</h3>',
+        '  <p>Paste your fine-grained PAT once and it\'ll be remembered for next time. Starts with github_pat_</p>',
+        '  <input type="password" id="jb-token-input" placeholder="github_pat_..." />',
+        '  <div class="jb-modal-actions"><button id="jb-token-cancel">Cancel</button><button id="jb-token-ok" class="primary">Save token</button></div>',
+        '</div>'
+      ].join('');
+      document.body.appendChild(modal);
+      var input = document.getElementById('jb-token-input');
+      input.focus();
+      function close(val) { document.body.removeChild(modal); resolve(val); }
+      document.getElementById('jb-token-cancel').onclick = function () { close(''); };
+      document.getElementById('jb-token-ok').onclick = function () {
+        var v = input.value.trim();
+        if (!v) { close(''); return; }
+        setStoredToken(v); close(v);
+      };
+      input.addEventListener('keydown', function (e) { if (e.key === 'Enter') document.getElementById('jb-token-ok').click(); if (e.key === 'Escape') close(''); });
+    });
+  }
+  function getToken() { var e = getStoredToken(); return e ? Promise.resolve(e) : promptForToken(); }
+
+  function getCurrentSha(token) {
+    var url = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + GH_FILE + '?ref=' + GH_BRANCH + '&_t=' + Date.now();
+    return fetch(url, { headers: ghHeaders(token), cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error('GET sha returned ' + r.status); return r.json(); }).then(function (data) { return data.sha; });
+  }
+
+  function pushUpdate(content, sha, token) {
+    var url = 'https://api.github.com/repos/' + GH_OWNER + '/' + GH_REPO + '/contents/' + GH_FILE;
+    function toBase64(str) { var bytes = new TextEncoder().encode(str); var bin = ''; bytes.forEach(function (b) { bin += String.fromCharCode(b); }); return btoa(bin); }
+    return fetch(url, { method: 'PUT', headers: ghHeaders(token), body: JSON.stringify({ message: 'Edit via Visual Editor (' + new Date().toISOString() + ')', content: toBase64(content), sha: sha, branch: GH_BRANCH }) }).then(function (r) { if (!r.ok) return r.text().then(function (t) { throw new Error('PUT returned ' + r.status + ': ' + t); }); return r.json(); });
+  }
+
+  function save() {
+    var btn = document.getElementById('jb-save');
+    btn.disabled = true; btn.textContent = 'Saving...';
+    status('checking token...');
+    return getToken().then(function (token) {
+      if (!token) { status('no token -- save cancelled'); btn.textContent = 'Save'; btn.disabled = false; return; }
+      status('saving to GitHub...');
+      var content = serializeForSave();
+      function attemptSave(retriesLeft) {
+        return getCurrentSha(token).then(function (sha) { status('committing...'); return pushUpdate(content, sha, token); })
+          .catch(function (err) {
+            if (retriesLeft > 0 && /409/.test(err.message)) { status('SHA conflict -- retrying...'); return new Promise(function (r) { setTimeout(r, 600); }).then(function () { return attemptSave(retriesLeft - 1); }); }
+            throw err;
+          });
+      }
+      return attemptSave(1).then(function () {
+        status('Vercel deploying...');
+        toast('Saved! Vercel redeploys in ~15s. Refresh to see live.');
+        btn.textContent = 'Saved ✓';
+        setTimeout(function () { btn.textContent = 'Save'; btn.disabled = false; status('click text, image, or trash icon'); }, 4000);
+      }).catch(function (err) {
+        if (/401|403/.test(err.message)) { clearStoredToken(); toast('Token rejected -- click Save again to enter a new one.', true); }
+        else { toast('Save failed: ' + err.message, true); }
+        status('save failed -- see toast'); btn.textContent = 'Save'; btn.disabled = false; console.error(err);
+      });
+    });
+  }
+
+  // ---------- help -----------------------------------------------------
+  function showHelp() {
+    var modal = document.createElement('div');
+    modal.id = 'jb-modal';
+    modal.innerHTML = [
+      '<div class="jb-modal-card" style="max-width:580px">',
+      '  <h3>Visual editor cheatsheet (v3.1)</h3>',
+      '  <p><strong>Edit text:</strong> click any heading, paragraph, link, or list item. Type. Click away.</p>',
+      '  <p><strong>Per-element styling:</strong> click any text element to open a panel with font / size / weight / spacing / color / align controls for JUST that element.</p>',
+      '  <p><strong>Drop a logo:</strong> click <em>Logo</em> in toolbar. Drop the company\'s logo file -- the site adopts its colors and the logo gets placed in header + footer with its background visually dropped so it flows with the page (never a foreign sticker).</p>',
+      '  <p><strong>BG mode (new):</strong> click <em>BG</em> in toolbar to enter background-picker mode. Hover any colored area to see a yellow outline, click to open a color picker just for that band. Press Esc to exit. Lets you fix the orange/brown/cream bands separately instead of touching every site var at once.</p>',
+      '  <p><strong>Swap image:</strong> click any image. Big "Tap to pick a photo" opens your camera roll on phone, or paste a URL via the small toggle below.</p>',
+      '  <p><strong>Delete/hide:</strong> hover any card, section, or element. Click the red X to hide it. Click X again to restore.</p>',
+      '  <p><strong>Style drawer:</strong> click <em>Style</em>. Adjust every site color, pick a whole-site font pairing, OR use the <em>Numbers font</em> picker to fix ugly stat displays without touching the rest.</p>',
+      '  <p><strong>Sections:</strong> click <em>Sections</em>. Every section listed -- click name to scroll, eye to toggle visibility.</p>',
+      '  <p><strong>Save:</strong> amber Save button pushes everything to GitHub. Vercel redeploys in ~15s.</p>',
+      '  <p style="color:#fbbf24"><strong>Tip:</strong> editor stays inert without ?edit=jb2026 in the URL. Visitors see the normal site.</p>',
+      '  <div class="jb-modal-actions"><button id="jb-help-ok" class="primary">Got it</button></div>',
+      '</div>'
+    ].join('');
+    document.body.appendChild(modal);
+    document.getElementById('jb-help-ok').onclick = function () { document.body.removeChild(modal); };
+  }
+
+  // ---------- init ------------------------------------------------------
+  function init() {
+    makeEditable();
+    bindImages();
+    bindDeleteButtons();
+    document.getElementById('jb-exit').onclick = exitEditMode;
+    document.getElementById('jb-save').onclick = save;
+    document.getElementById('jb-help').onclick = showHelp;
+    document.getElementById('jb-style').onclick = openStyleDrawer;
+    document.getElementById('jb-sections').onclick = openSectionDrawer;
+    document.getElementById('jb-logo').onclick = openLogoModal;
+    document.getElementById('jb-bg').onclick = enterBgMode;
+    status(getStoredToken() ? 'click text, image, or trash icon' : 'click anything to edit -- token prompt appears on first Save');
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+
+
+</body>
+</html>
