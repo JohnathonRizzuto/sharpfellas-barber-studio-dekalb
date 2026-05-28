@@ -1,0 +1,11 @@
+{
+  "name": "The Sharpfellas Barber Studio",
+  "short_name": "The Sharpfellas Barber Studio",
+  "icons": [
+    { "src": "/favicon-32x32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "theme_color": "#7a3a4c",
+  "background_color": "#fbf6f1",
+  "display": "standalone"
+}
